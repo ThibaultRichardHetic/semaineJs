@@ -1,4 +1,3 @@
-let word = ["charles","juleslapute","michel","rino","girafe"]
 let input = document.querySelector('input')
 let form = document.querySelector('form')
 let alea
