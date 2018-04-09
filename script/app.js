@@ -4,10 +4,10 @@ let alea
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
- document.getElementById("word").innerHTML = word[alea]
+ document.getElementById("word").innerHTML = array[alea]
 
 }
-aleaWord(word)
+aleaWord(plaine)
 
 input.addEventListener(
   'keyup',
@@ -15,7 +15,8 @@ input.addEventListener(
     if(this.value.replace(' ','') == word[alea]) {
       console.log('ok')
       form.reset()
-      aleaWord(word)
+      aleaWord(plaine)
+
     }
   }
 )
