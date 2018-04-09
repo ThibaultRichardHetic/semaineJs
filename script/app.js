@@ -12,11 +12,16 @@ aleaWord(plaine)
 input.addEventListener(
   'keyup',
   function(e){
-    if(this.value.replace(' ','') == word[alea]) {
+    if(this.value.replace(' ','') == plaine[alea]) {
       console.log('ok')
       form.reset()
       aleaWord(plaine)
 
     }
+  }
+)
+form.addEventListener(
+  'submit',function(e){
+    e.preventDefault()
   }
 )
