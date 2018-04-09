@@ -9,6 +9,7 @@ function aleaWord(array){
 }
 aleaWord(word)
 
+
 input.addEventListener(
   'keyup',
   function(e){
@@ -22,4 +23,9 @@ input.addEventListener(
 
   }
 
+)
+form.addEventListener(
+  'submit',function(e){
+    e.preventDefault()
+  }
 )

@@ -1,1 +1,1 @@
-let word = ["charles","juleslapute","michel","rino","girafe"]
+let word = ["charles","jules","michel","rino","girafe"]
