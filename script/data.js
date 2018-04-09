@@ -1,5 +1,4 @@
-
-let word = ["charles","juleslapute","michel","rino","girafe"]
+let word = ["charles", "juleslapute", "michel", "rino", "girafe"]
 
 //niveau 1
 
@@ -9,7 +8,7 @@ const savane = ["lion", "guépard", "gazelle", "gnou", "girafe", "eléphant", "z
 "impala", "springbok", "oryx", "autruche", "phacochère", "chacal", "varan"]
 
 const plage = ["sable", "mer", "poisson", "crabe", "moule", "huître", "Château de sable", "parasol", "pelle", "pêcheur", "baignade", "houle", "sceau", "littoral", "écume", "blockhaus", "thon", "saumon", "cabillaud",
-"épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "coup de soleil", "tong", "galet", "étoile de mer"
+"épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "coup de soleil", "tong", "galet", "étoile de mer",
 "voilier", "mouette", "phare"]
 
 //niveau 2
