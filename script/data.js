@@ -1,3 +1,4 @@
+
 let word = ["charles","juleslapute","michel","rino","girafe"]
 
 //niveau 1

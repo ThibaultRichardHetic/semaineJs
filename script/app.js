@@ -9,13 +9,23 @@ function aleaWord(array){
 }
 aleaWord(word)
 
+
 input.addEventListener(
   'keyup',
   function(e){
+
     if(this.value.replace(' ','') == word[alea]) {
       console.log('ok')
       form.reset()
       aleaWord(word)
+
     }
+
+  }
+
+)
+form.addEventListener(
+  'submit',function(e){
+    e.preventDefault()
   }
 )
