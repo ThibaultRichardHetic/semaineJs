@@ -9,11 +9,7 @@ const savane = ["lion", "guépard", "gazelle", "gnou", "girafe", "eléphant", "z
 
 const plage = ["sable", "mer", "poisson", "crabe", "moule", "huître", "Château de sable", "parasol", "pelle", "pêcheur", "baignade", "houle", "sceau", "littoral", "écume", "blockhaus", "thon", "saumon", "cabillaud",
 "épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "coup de soleil", "tong", "galet", "étoile de mer"
-,"voilier", "mouette", "phare"]
-
-"épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "coup de soleil", "tong", "galet", "étoile de mer",
-"voilier", "mouette", "phare"]
->>>>>>> b3c030a251e7797218371dafb32df9211d133a05
+,"voilier", "mouette", "phare" ,"épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "coup de soleil", "tong", "galet", "étoile de mer","voilier", "mouette", "phare"]
 
 //niveau 2
 
