@@ -4,10 +4,10 @@ let alea
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
- document.getElementById("word").innerHTML = plaine[alea]
+ document.getElementById("word").innerHTML = array[alea]
 
 }
-aleaWord(word)
+aleaWord(plaine)
 
 
 input.addEventListener(
@@ -17,7 +17,7 @@ input.addEventListener(
     if(this.value.replace(' ','') == plaine[alea]) {
       console.log('ok')
       form.reset()
-      aleaWord(word)
+      aleaWord(plaine)
 
     }
 
