@@ -29,6 +29,7 @@ img{
 
 
 }
+
 .menu{
   width: 960px;
   height: 700px;
@@ -60,6 +61,7 @@ li:hover{
   transition: all 10ms ease-in;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -95,4 +97,12 @@ li:hover{
   100% {
     transform: translateX(-66.6666%);
   }
+=======
+#word{
+  color: white;
+  position: absolute;
+  left: 80%;
+  margin-top: 10%;
+  transition: left 0s ease-out;
+>>>>>>> caa520b0162c5ed08582b2766e8dae47f7873356
 }
