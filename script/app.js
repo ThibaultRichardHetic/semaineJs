@@ -21,7 +21,10 @@ input.addEventListener(
       form.reset()
       aleaWord(plaine)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1d9cd0dc3515d774cf00b0c5504e2650958c0757
     }
   }
 )
