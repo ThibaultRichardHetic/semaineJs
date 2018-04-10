@@ -66,10 +66,6 @@ li:hover{
   transition: all 10ms ease-in;
 }
 
-
-
-
-
 .tech-slideshow {
   height: 450px;
   max-width: 800px;
@@ -82,7 +78,7 @@ li:hover{
 .tech-slideshow > div {
   height: 200px;
   width: 2526px;
-  background: url("../images/jungle.png");
+  background: url("../images/space.png");
   background-size: 32%;
   position: absolute;
   top: 0;
@@ -90,13 +86,15 @@ li:hover{
   height: 100%;
   transform: translate3d(0, 0, 0);
 }
+
 .tech-slideshow .mover-1 {
-  animation: moveSlideshow 12s linear infinite;
-
-
+  animation: moveSlideshow 10s linear infinite;
 }
 
 @keyframes moveSlideshow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
   100% {
     transform: translateX(-66.6666%);
   }

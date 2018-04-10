@@ -10,7 +10,6 @@ function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
  document.getElementById("word").innerHTML = array[alea]
-
 }
 aleaWord(plaine)
 
@@ -58,7 +57,7 @@ window.addEventListener(
   'keyup', function(e){
     e.preventDefault()
     if (e.keyCode==32) {
-    document.getElementById("word").style.transition = "left 10s ease-out"
+    document.getElementById("word").style.transition = "left 6s ease-out"
     document.getElementById("word").style.left = 30 + "%"
     }
   }
