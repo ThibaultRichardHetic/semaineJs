@@ -3,8 +3,11 @@ let form = document.querySelector('form')
 let alea
 let play = document.getElementById('play')
 let menu = document.getElementById('menu')
-let game= document.getElementById('game')
+let game = document.getElementById('game')
 let jungles = document.getElementById('jungle')
+let vitesseMot = 15
+let tableau = plaine
+let score = 0
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
@@ -12,15 +15,19 @@ function aleaWord(array){
  document.getElementById("word").innerHTML = array[alea]
 
 }
-aleaWord(plaine)
+aleaWord(tableau)
 
 input.addEventListener(
   'keyup',
   function(e){
-    if(this.value.replace(' ','') == plaine[alea]) {
+    if(this.value.replace(' ','') == tableau[alea]) {
       console.log('ok')
       form.reset()
-      aleaWord(plaine)
+      vitesseMot -= 1
+      score += 10
+      console.log(score)
+      selectList()
+      aleaWord(tableau)
     //  defilement()
 
 
@@ -58,11 +65,24 @@ window.addEventListener(
   'keyup', function(e){
     e.preventDefault()
     if (e.keyCode==32) {
-    document.getElementById("word").style.transition = "left 10s ease-out"
+    document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
     document.getElementById("word").style.left = 30 + "%"
     }
   }
 )
+
+function selectList(){
+  if (score >= 100) {
+    tableau = savane
+  }
+  else if (score >= 200) {
+    tableau = plage
+  }
+  else {
+    tableau = plaine
+  }
+}
+
 
 /*
 function defilement(){
