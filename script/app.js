@@ -13,7 +13,6 @@ function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
  document.getElementById("word").innerHTML = array[alea]
-
 }
 aleaWord(tableau)
 
