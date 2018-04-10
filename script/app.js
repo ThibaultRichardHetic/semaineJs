@@ -27,10 +27,8 @@ input.addEventListener(
       console.log(score)
       selectList()
       aleaWord(tableau)
-<<<<<<< HEAD
-=======
       replaceScore()
->>>>>>> 5387cce67c0be4fe6f1895972836ea858ae365f2
+
 
 
     //  defilement()
