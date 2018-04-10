@@ -8,6 +8,7 @@ let jungles = document.getElementById('jungle')
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
+ randomPosition()
  document.getElementById("word").innerHTML = array[alea]
 
 }
@@ -41,3 +42,12 @@ play.addEventListener(
 
   }
 )
+
+////////// positionement du mot
+function randomPosition(){
+  let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
+  let height = 10 + x
+  //document.getElementById("word").style.transition = "left 0s ease-out"
+  document.getElementById("word").style.top = height + "%"
+  //document.getElementById("word").style.left = left + "%"
+}
