@@ -8,17 +8,25 @@ let jungles = document.getElementById('jungle')
 let vitesseMot = 15
 let tableau = plaine
 let score = 0
+let changeColor = document.getElementById("word")
+
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
- document.getElementById("word").innerHTML = array[alea]
+ changeColor.innerHTML = array[alea]
 }
 aleaWord(tableau)
 
 input.addEventListener(
   'keyup',
   function(e){
+    for(let i=0; i<tableau[alea].length; i++){
+    if(e.key == tableau[alea][i]){
+      console.log('yes')
+      changeColor.style.color= "red"
+    }
+  }
     if(this.value.replace(' ','') == tableau[alea]) {
       console.log('ok')
       form.reset()
@@ -27,16 +35,11 @@ input.addEventListener(
       console.log(score)
       selectList()
       aleaWord(tableau)
-<<<<<<< HEAD
-=======
       replaceScore()
->>>>>>> 5387cce67c0be4fe6f1895972836ea858ae365f2
-
-
-    //  defilement()
     }
   }
 )
+
 form.addEventListener(
   'submit',
   function(e){
@@ -54,7 +57,7 @@ play.addEventListener(
   }
 )
 
-////////// positionement du mot
+
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
   let height = 10 + x
