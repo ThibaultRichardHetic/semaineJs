@@ -9,7 +9,10 @@ height: 30px;
 align-items: flex-end;
 
 }
-
+img{
+  height: 85%;
+  width: 1000px;
+}
 .game{
   visibility: hidden;
   display: none;
