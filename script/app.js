@@ -21,6 +21,7 @@ input.addEventListener(
       console.log('ok')
       form.reset()
       aleaWord(plaine)
+    //  defilement()
 
 
     }
@@ -47,7 +48,25 @@ play.addEventListener(
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
   let height = 10 + x
-  //document.getElementById("word").style.transition = "left 0s ease-out"
+  document.getElementById("word").style.transition = "left 0s ease-out"
   document.getElementById("word").style.top = height + "%"
-  //document.getElementById("word").style.left = left + "%"
+  document.getElementById("word").style.left = 80 + "%"
 }
+
+
+window.addEventListener(
+  'keyup', function(e){
+    e.preventDefault()
+    if (e.keyCode==32) {
+    document.getElementById("word").style.transition = "left 10s ease-out"
+    document.getElementById("word").style.left = 30 + "%"
+    }
+  }
+)
+
+/*
+function defilement(){
+  document.getElementById("word").style.transition = "left 10s ease-out"
+  document.getElementById("word").style.left = 30 + "%"
+}
+*/

@@ -1,11 +1,10 @@
 #word{
-  visibility: hidden;
-  display: none;
+  z-index: 100;
   color: white;
   position: absolute;
   left: 80%;
   margin-top: 10%;
-  transition: left 0s ease-out;
+  /*transition: left 0s ease-out;*/
 
 }
 body{
