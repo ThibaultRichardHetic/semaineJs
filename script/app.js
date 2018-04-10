@@ -27,9 +27,9 @@ input.addEventListener(
       console.log(score)
       selectList()
       aleaWord(tableau)
+
+
     //  defilement()
-
-
     }
   }
 )
