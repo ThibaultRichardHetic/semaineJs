@@ -7,6 +7,17 @@
   /*transition: left 0s ease-out;*/
 
 }
+span{
+  color: white;
+  font-size: 20px;
+  display: block;
+  position: absolute;
+  left: 4%;
+  top: 9%;
+}
+span:last-of-type{
+  margin-top: 40px;
+}
 body{
   background: #2c3e50;
   width: 960px;

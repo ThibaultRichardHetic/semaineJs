@@ -27,6 +27,10 @@ input.addEventListener(
       console.log(score)
       selectList()
       aleaWord(tableau)
+<<<<<<< HEAD
+=======
+      replaceScore()
+>>>>>>> 5387cce67c0be4fe6f1895972836ea858ae365f2
 
 
     //  defilement()
@@ -82,10 +86,13 @@ function selectList(){
   }
 }
 
-
-/*
-function defilement(){
-  document.getElementById("word").style.transition = "left 10s ease-out"
-  document.getElementById("word").style.left = 30 + "%"
+function replaceScore(){
+  document.getElementById("score").innerHTML = "score : " + score
 }
-*/
+
+document.getElementById("word").addEventListener(
+  'transitionend', function(e){
+    e.preventDefault()
+    window.alert("vous avez perdu")
+  }
+)
