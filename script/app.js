@@ -73,6 +73,7 @@ window.addEventListener(
 function selectList(){
   if (score >= 100) {
     tableau = savane
+    document.querySelector(".mover-1").style.background = " url(images/jungle.png)"
   }
   else if (score >= 200) {
     tableau = plage
