@@ -27,7 +27,7 @@ input.addEventListener(
       console.log(score)
       selectList()
       aleaWord(tableau)
-    //  defilement()
+      replaceScore()
 
 
     }
@@ -82,10 +82,13 @@ function selectList(){
   }
 }
 
-
-/*
-function defilement(){
-  document.getElementById("word").style.transition = "left 10s ease-out"
-  document.getElementById("word").style.left = 30 + "%"
+function replaceScore(){
+  document.getElementById("score").innerHTML = "score : " + score
 }
-*/
+
+document.getElementById("word").addEventListener(
+  'transitionend', function(e){
+    e.preventDefault()
+    window.alert("vous avez perdu")
+  }
+)
