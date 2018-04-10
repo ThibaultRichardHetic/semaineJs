@@ -36,6 +36,13 @@ input.addEventListener(
       selectList()
       aleaWord(tableau)
       replaceScore()
+<<<<<<< HEAD
+=======
+
+
+
+    //  defilement()
+>>>>>>> 7527dae5b7a9d3b457d2d7ddd0c8987156017b7d
     }
   }
 )
@@ -80,6 +87,7 @@ window.addEventListener(
 function selectList(){
   if (score >= 100) {
     tableau = savane
+    document.querySelector(".mover-1").style.background = " url(images/jungle.png)"
   }
   else if (score >= 200) {
     tableau = plage
