@@ -82,6 +82,7 @@ li:hover{
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  
 
   transform: translate3d(0, 0, 0);
 }
@@ -96,6 +97,7 @@ li:hover{
   left: 0;
   height: 100%;
   transform: translate3d(0, 0, 0);
+
 }
 
 .tech-slideshow .mover-1 {
