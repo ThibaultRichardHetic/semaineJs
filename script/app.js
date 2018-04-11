@@ -58,7 +58,7 @@ function comparLetter(a){
     document.querySelector('span:nth-child(' + letterInWord +')').style.color = "green"
   }
 
-  else if (a == 'Backspace') {
+  else if (a == 'Backspace' && letterInWord > 0) {
     console.log('efface')
     letterInWord -= 1
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
@@ -177,35 +177,35 @@ function selectList(){
   }
   else if (score >= 200) {
     tableau = beach
-    document.querySelector(".mover-1").style.background = " url(images/beach.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/beach.png)"
   }
   else if (score >= 300) {
     tableau = desert
-    document.querySelector(".mover-1").style.background = " url(images/desert.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/desert.png)"
   }
   else if (score >= 400) {
     tableau = jungle
-    document.querySelector(".mover-1").style.background = " url(images/jungle.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/jungle.png)"
   }
   else if (score >= 500) {
     tableau = montain
-    document.querySelector(".mover-1").style.background = " url(images/montain.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/montain.png)"
   }
   else if (score >= 600) {
     tableau = underWater
-    document.querySelector(".mover-1").style.background = " url(images/underWater.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/underWater.png)"
   }
   else if (score >= 700) {
     tableau = ice
-    document.querySelector(".mover-1").style.background = " url(images/ice.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/ice.png)"
   }
   else if (score >= 800) {
     tableau = volcan
-    document.querySelector(".mover-1").style.background = " url(images/volcan.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/volcan.png)"
   }
   else if (score > 900) {
     tableau = space
-    document.querySelector(".mover-1").style.background = " url(images/space.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/space.png)"
   }
   else {
     tableau = cloud
