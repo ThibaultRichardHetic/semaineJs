@@ -77,21 +77,16 @@ li:hover{
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-
-
   transform: translate3d(0, 0, 0);
 }
 
 .tech-slideshow > div {
   height: 200px;
   width: 2526px;
-  background: url("../images/underwater.png");
+  background: url("../images/cloud.png");
   background-size: 32%;
   position: absolute;
-
   height: 100%;
-  transform: translate3d(0, 0, 0);
-
 }
 
 .tech-slideshow .mover-1 {
@@ -100,8 +95,8 @@ li:hover{
 
 @keyframes moveSlideshow {
   0% {
-    transform: translate3d(0, 0, 0);
+    background-position: 0px;
   }
   100% {
-    transform: translateX(-66.6666%);
+    background-position: -1000px;
   }

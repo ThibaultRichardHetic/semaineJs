@@ -10,6 +10,9 @@ let tableau = plaine
 let score = 0
 let changeColor = document.getElementById("word")
 let body= document.querySelector('body')
+let player= document.getElementById('player')
+let playerX=0
+let playerY=0
 
 
 function aleaWord(array){
@@ -41,6 +44,19 @@ input.addEventListener(
       replaceScore()
 
     }
+  }
+)
+function displayPlayer(){
+  player.style.top= (playerY) + 'px'
+  player.style.left= (playerX) + 'px'
+}
+player.addEventListener(
+  'mousemove',
+  function(e) {
+    playerY = e.clientY
+    playerX = e.clientX
+    displayPlayer()
+    console.log(playerY)
   }
 )
 
