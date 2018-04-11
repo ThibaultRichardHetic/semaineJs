@@ -84,10 +84,11 @@ li:hover{
 .tech-slideshow > div {
   height: 200px;
   width: 2526px;
-  background: url("../images/cloud.png")
+  background: url("../images/cloud.png") repeat 0 0;
   background-size: 32%;
   position: absolute;
   height: 100%;
+
 }
 
 .tech-slideshow .mover-1 {
@@ -95,9 +96,7 @@ li:hover{
 }
 
 @keyframes moveSlideshow {
-  0% {
-    background-position: 0px;
-  }
   100% {
-    background-position: -1000px;
+    transform: translateX(-66.6666%);
   }
+}
