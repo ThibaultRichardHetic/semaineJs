@@ -171,35 +171,39 @@ function launchWord(){
 }
 
 function selectList(){
-  if (score >= 100) {
+  console.log('selectList')
+  if (score >= 100 && score < 200) {
+    console.log('plain')
     tableau = plain
     document.querySelector(".mover-1").style.background = " url(../images/plain.png)"
   }
-  else if (score >= 200) {
+  else if (score >= 200 && score < 300) {
+    console.log('beach')
     tableau = beach
     document.querySelector(".mover-1").style.background = " url(../images/beach.png)"
   }
-  else if (score >= 300) {
+  else if (score >= 300 && score < 400) {
+    console.log('desert')
     tableau = desert
     document.querySelector(".mover-1").style.background = " url(../images/desert.png)"
   }
-  else if (score >= 400) {
+  else if (score >= 400 && score < 500) {
     tableau = jungle
     document.querySelector(".mover-1").style.background = " url(../images/jungle.png)"
   }
-  else if (score >= 500) {
+  else if (score >= 500 && score < 600) {
     tableau = montain
     document.querySelector(".mover-1").style.background = " url(../images/montain.png)"
   }
-  else if (score >= 600) {
+  else if (score >= 600 && score < 700) {
     tableau = underWater
     document.querySelector(".mover-1").style.background = " url(../images/underWater.png)"
   }
-  else if (score >= 700) {
+  else if (score >= 700 && score < 800) {
     tableau = ice
     document.querySelector(".mover-1").style.background = " url(../images/ice.png)"
   }
-  else if (score >= 800) {
+  else if (score >= 800 && score < 900) {
     tableau = volcan
     document.querySelector(".mover-1").style.background = " url(../images/volcan.png)"
   }
