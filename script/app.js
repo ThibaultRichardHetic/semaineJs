@@ -13,8 +13,9 @@ let body= document.querySelector('body')
 let player= document.getElementById('player')
 let playerX=0
 let playerY=0
-let wordTest
+let wordTest, a
 let letterInWord = 0
+
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
@@ -56,8 +57,10 @@ function comparLetter(a){
     letterInWord ++
     document.querySelector('span:nth-child(' + letterInWord +')').style.color = "green"
   }
-  else if (a != tableau[alea][letterInWord]) {
+
+  else if (a != tableau[alea][letterInWord] && a != 0) {
     console.log('no')
+    document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "red"
   }
   else {
     console.log('chelou')
@@ -77,7 +80,7 @@ input.addEventListener(
     }
   }
   */
-  let a = e.key
+  a = e.key
   comparLetter(a)
 
     if(this.value.replace(' ','') == tableau[alea]) {
@@ -85,6 +88,7 @@ input.addEventListener(
       form.reset()
       vitesseMot -= 1
       score += 50
+      a = 0
       console.log(score)
       initialiseSpan()
       selectList()  //
@@ -101,11 +105,11 @@ function displayPlayer(){
 game.addEventListener(
   'mousemove',
   function(e) {
-    console.log(e)
+    //console.log(e)
     playerY = e.clientY
     playerX = e.clientX
     displayPlayer()
-    console.log(playerY)
+    //console.log(playerY)
   }
 )
 
