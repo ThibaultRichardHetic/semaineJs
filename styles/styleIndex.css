@@ -99,16 +99,31 @@ div.regrouping{
 }
 /* 3-col end */
 
-main h2{
-  margin: 20px;
+/* game description start*/
+
+main div.game h2, main div.game p{
+  text-align: left;
+}
+main div.game h2{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+main div.game p{
+  width: 700px;
+  float: left;
+  margin-left: 50px;
+}
+main div.game img{
+  width: 160px;
 }
 
+/* game description end*/
 
 
 /* main end */
 footer{
   margin-top: 20px;
-  background-color: #057061;
+  background-color: #0E1111;
   padding-top: 20px;
   padding-bottom: 20px;
 }
