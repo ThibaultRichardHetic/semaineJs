@@ -58,9 +58,18 @@ function comparLetter(a){
     document.querySelector('span:nth-child(' + letterInWord +')').style.color = "green"
   }
 
-  else if (a != tableau[alea][letterInWord] && a != 0) {
+  else if (a == 'Backspace') {
+    console.log('efface')
+    letterInWord -= 1
+    document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
+
+  }
+
+  else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
     console.log('no')
-    document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "red"
+    console.log(a)
+    letterInWord ++
+    document.querySelector('span:nth-child(' + (letterInWord) +')').style.color = "red"
   }
   else {
     console.log('chelou')
@@ -86,9 +95,9 @@ input.addEventListener(
     if(this.value.replace(' ','') == tableau[alea]) {
       console.log('ok')
       form.reset()
-      vitesseMot -= 1
+      vitesseMot -= 1                             // quand le mot est bon
       score += 50
-      a = 0
+      a = -1
       console.log(score)
       initialiseSpan()
       selectList()  //
