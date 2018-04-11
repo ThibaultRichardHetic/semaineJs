@@ -17,14 +17,19 @@ let wordTest, a
 let letterInWord = 0
 let speed=1
 
+aleaWord(tableau)
+
+///// ALL FUNCTIONS START
 
 function backgroundmove(){
   speed-=2
   document.querySelector('.mover-1').style.backgroundPosition = speed +"px"
 }
+
 function scrollbackground(){
   setInterval(backgroundmove,10)
 }
+
 function aleaWord(array){
   launchWord()
  alea = parseInt(Math.floor(Math.random() * array.length))
@@ -36,14 +41,11 @@ function aleaWord(array){
    createSpan(letter)
  }
 }
-aleaWord(tableau)
-
 
 ////// pour la couleur début
 function createSpan(letter){
   let newElement = document.createElement('span')
   newElement.textContent = letter
-
   let mot = document.getElementById('word')
   mot.appendChild(newElement)
   console.log(newElement)
@@ -56,24 +58,19 @@ function initialiseSpan(){
     var throwawayNode = d.removeChild(d_nested);
   }
   letterInWord = 0
-
 }
 
 function comparLetter(a){
-
   if (a == tableau[alea][letterInWord]) {
     console.log('yes')
     letterInWord ++
     document.querySelector('span:nth-child(' + letterInWord +')').style.color = "green"
   }
-
   else if (a == 'Backspace' && letterInWord > 0) {
     console.log('efface')
     letterInWord -= 1
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
-
   }
-
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
     console.log('no')
     console.log(a)
@@ -84,72 +81,12 @@ function comparLetter(a){
     console.log('chelou')
   }
 }
-
 ////pour la couleur fin
 
-input.addEventListener(
-  'keyup',
-  function(e){
-    /*
-    for(let i=0; i<tableau[alea].length; i++){
-    if(e.key == tableau[alea][i]){
-      console.log('yes')
-      changeColor.style.color= "red"
-    }
-  }
-  */
-  a = e.key
-  comparLetter(a)
-
-    if(this.value.replace(' ','') == tableau[alea]) {
-      console.log('ok')
-      form.reset()
-      vitesseMot -= 1                             // quand le mot est bon
-      score += 50
-      a = -1
-      console.log(score)
-      initialiseSpan()
-      selectList()  //
-      aleaWord(tableau)
-      replaceScore()
-
-    }
-  }
-)
 function displayPlayer(){
   player.style.top= (playerY-100) + 'px'
   player.style.left= (playerX-100) + 'px'
 }
-game.addEventListener(
-  'mousemove',
-  function(e) {
-    //console.log(e)
-    playerY = e.clientY
-    playerX = e.clientX
-    displayPlayer()
-    //console.log(playerY)
-  }
-)
-
-form.addEventListener(
-  'submit',
-  function(e){
-    e.preventDefault()
-  }
-)
-play.addEventListener(
-  'click',
-  function(e){
-    scrollbackground()
-    menu.style.visibility="hidden"
-    menu.style.display="none"
-    game.style.display="block"
-    game.style.visibility="visible"
-    body.style.width="unset"
-
-  }
-)
-
 
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
@@ -159,20 +96,8 @@ function randomPosition(){
   document.getElementById("word").style.left = 80 + "%"
 }
 
-
-window.addEventListener(
-  'keyup', function(e){
-    e.preventDefault()
-    if (e.keyCode==32) {
-      document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
-      document.getElementById("word").style.left = 30 + "%"
-    }
-  }
-)
-
 function launchWord(){
   randomPosition()
-
   setTimeout(function(){
     document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
     document.getElementById("word").style.left = 30 + "%"
@@ -231,6 +156,69 @@ function replaceScore(){
   document.getElementById("score").innerHTML = "score : " + score
 }
 
+///// ALL FUNCTIONS END
+
+///// ALL EVENT START
+input.addEventListener(
+  'keyup',
+  function(e){
+  a = e.key
+  comparLetter(a)
+    if(this.value.replace(' ','') == tableau[alea]) {
+      console.log('ok')
+      form.reset()
+      vitesseMot -= 1                             // quand le mot est bon
+      score += 50
+      a = -1
+      console.log(score)
+      initialiseSpan()
+      selectList()  //
+      aleaWord(tableau)
+      replaceScore()
+    }
+  }
+)
+
+game.addEventListener(
+  'mousemove',
+  function(e) {
+    //console.log(e)
+    playerY = e.clientY
+    playerX = e.clientX
+    displayPlayer()
+    //console.log(playerY)
+  }
+)
+
+form.addEventListener(
+  'submit',
+  function(e){
+    e.preventDefault()
+  }
+)
+play.addEventListener(
+  'click',
+  function(e){
+    scrollbackground()
+    menu.style.visibility="hidden"
+    menu.style.display="none"
+    game.style.display="block"
+    game.style.visibility="visible"
+    body.style.width="unset"
+
+  }
+)
+
+window.addEventListener(
+  'keyup', function(e){
+    e.preventDefault()
+    if (e.keyCode==32) {
+      document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
+      document.getElementById("word").style.left = 30 + "%"
+    }
+  }
+)
+
 document.getElementById("word").addEventListener(
   'transitionend', function(e){
     e.preventDefault()
@@ -239,3 +227,5 @@ document.getElementById("word").addEventListener(
     window.alert("vous avez perdu, votre score est de : " + oldScore)
   }
 )
+
+///// ALL EVENT START
