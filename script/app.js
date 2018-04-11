@@ -16,6 +16,7 @@ let playerY = 0
 let wordTest, a , alea
 let letterInWord = 0
 let speed = 1
+let comboIsPossible = 0
 let combo = 1
 
 setInterval(aleaWord(tableau),testconsole(), 1000);
@@ -76,12 +77,16 @@ function comparLetter(a){
   else if (a == 'Backspace' && letterInWord > 0) {
     console.log('efface')
     letterInWord -= 1
+    comboIsPossible = 0
+    addCombo()
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
   }
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
     console.log('no')
     console.log(a)
     letterInWord ++
+    comboIsPossible = 0
+    addCombo()
     document.querySelector('span:nth-child(' + (letterInWord) +')').style.color = "red"
   }
   else {
@@ -163,6 +168,17 @@ function replaceScore(){
   document.getElementById("score").innerHTML = "score : " + score
 }
 
+function addCombo(){
+  if (comboIsPossible > 2) {
+    combo += 0.5
+    document.getElementById("combo").innerHTML = "combo : " + combo
+  }
+  else {
+    document.getElementById("combo").innerHTML = "combo : " + combo
+
+  }
+}
+
 ///// ALL FUNCTIONS END
 
 ///// ALL EVENT START
@@ -174,10 +190,12 @@ input.addEventListener(
     if(this.value.replace(' ','') == tableau[alea]) {
       console.log('ok')
       form.reset()
-      vitesseMot -= 1                             // quand le mot est bon
-      score += 50
+      comboIsPossible ++
+      vitesseMot -= 1                    // quand le mot est bon
+      score = score + 50 * combo
       a = -1
       console.log(score)
+      addCombo()
       initialiseSpan()
       selectList()  //
       aleaWord(tableau)
