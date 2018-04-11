@@ -83,7 +83,7 @@ window.addEventListener(
 function selectList(){
   if (score >= 100) {
     tableau = savane
-    document.querySelector(".mover-1").style.background = " url(images/jungle.png)"
+    document.querySelector(".mover-1").style.background = " url(../images/jungle.png)"
   }
  if (score >= 200) {
     tableau = plage
@@ -102,6 +102,8 @@ function replaceScore(){
 document.getElementById("word").addEventListener(
   'transitionend', function(e){
     e.preventDefault()
-    window.alert("vous avez perdu")
+    let oldScore = score
+    score = 0
+    window.alert("vous avez perdu, votre score est de : " + oldScore)
   }
 )
