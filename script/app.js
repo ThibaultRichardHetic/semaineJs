@@ -1,29 +1,36 @@
 let input = document.querySelector('input')
 let form = document.querySelector('form')
-let alea
 let play = document.getElementById('play')
 let menu = document.getElementById('menu')
 let game = document.getElementById('game')
 let jungles = document.getElementById('jungle')
+let theWord = document.getElementById('word')
+let body = document.querySelector('body')
+let player = document.getElementById('player')
+let decorations = document.querySelector('.mover-1')
 let vitesseMot = 15
 let tableau = cloud
 let score = 0
-let changeColor = document.getElementById("word")
-let body= document.querySelector('body')
-let player= document.getElementById('player')
-let playerX=0
-let playerY=0
-let wordTest, a
+let playerX = 0
+let playerY = 0
+let wordTest, a , alea
 let letterInWord = 0
-let speed=1
+let speed = 1
+let combo = 1
 
-aleaWord(tableau)
+setInterval(aleaWord(tableau),testconsole(), 1000);
+
+function testconsole(){
+  console.log("en boucle")
+}
+//setInterval(aleaWord(tableau){ console.log("boucle") }, 3000)
+
 
 ///// ALL FUNCTIONS START
 
 function backgroundmove(){
   speed-=2
-  document.querySelector('.mover-1').style.backgroundPosition = speed +"px"
+  decorations.style.backgroundPosition = speed +"px"
 }
 
 function scrollbackground(){
@@ -46,14 +53,14 @@ function aleaWord(array){
 function createSpan(letter){
   let newElement = document.createElement('span')
   newElement.textContent = letter
-  let mot = document.getElementById('word')
+  let mot = theWord
   mot.appendChild(newElement)
   console.log(newElement)
 }
 
 function initialiseSpan(){
   for (var i = 0; i < wordTest.length; i++) {
-    var d = document.getElementById("word");
+    var d = theWord;
     var d_nested = document.querySelector("#word span");
     var throwawayNode = d.removeChild(d_nested);
   }
@@ -91,16 +98,16 @@ function displayPlayer(){
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
   let height = 10 + x
-  document.getElementById("word").style.transition = "left 0s ease-out"
-  document.getElementById("word").style.top = height + "%"
-  document.getElementById("word").style.left = 80 + "%"
+  theWord.style.transition = "left 0s ease-out"
+  theWord.style.top = height + "%"
+  theWord.style.left = 80 + "%"
 }
 
 function launchWord(){
   randomPosition()
   setTimeout(function(){
-    document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
-    document.getElementById("word").style.left = 30 + "%"
+    theWord.style.transition = "left " + vitesseMot + "s ease-out"
+    theWord.style.left = 30 + "%"
   },
   2000)
 }
@@ -110,41 +117,41 @@ function selectList(){
   if (score >= 100 && score < 200) {
     console.log('plain')
     tableau = plain
-    document.querySelector(".mover-1").style.background = " url(../images/plain.png)"
+    decorations.style.background = " url(../images/plain.png)"
   }
   else if (score >= 200 && score < 300) {
     console.log('beach')
     tableau = beach
-    document.querySelector(".mover-1").style.background = " url(../images/beach.png)"
+    decorations.style.background = " url(../images/beach.png)"
   }
   else if (score >= 300 && score < 400) {
     console.log('desert')
     tableau = desert
-    document.querySelector(".mover-1").style.background = " url(../images/desert.png)"
+    decorations.style.background = " url(../images/desert.png)"
   }
   else if (score >= 400 && score < 500) {
     tableau = jungle
-    document.querySelector(".mover-1").style.background = " url(../images/jungle.png)"
+    decorations.style.background = " url(../images/jungle.png)"
   }
   else if (score >= 500 && score < 600) {
     tableau = montain
-    document.querySelector(".mover-1").style.background = " url(../images/montain.png)"
+    decorations.style.background = " url(../images/montain.png)"
   }
   else if (score >= 600 && score < 700) {
     tableau = underWater
-    document.querySelector(".mover-1").style.background = " url(../images/underWater.png)"
+    decorations.style.background = " url(../images/underWater.png)"
   }
   else if (score >= 700 && score < 800) {
     tableau = ice
-    document.querySelector(".mover-1").style.background = " url(../images/ice.png)"
+    decorations.style.background = " url(../images/ice.png)"
   }
   else if (score >= 800 && score < 900) {
     tableau = volcan
-    document.querySelector(".mover-1").style.background = " url(../images/volcan.png)"
+    decorations.style.background = " url(../images/volcan.png)"
   }
   else if (score > 900) {
     tableau = space
-    document.querySelector(".mover-1").style.background = " url(../images/space.png)"
+    decorations.style.background = " url(../images/space.png)"
   }
   else {
     tableau = cloud
@@ -213,13 +220,13 @@ window.addEventListener(
   'keyup', function(e){
     e.preventDefault()
     if (e.keyCode==32) {
-      document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
-      document.getElementById("word").style.left = 30 + "%"
+      theWord.style.transition = "left " + vitesseMot + "s ease-out"
+      theWord.style.left = 30 + "%"
     }
   }
 )
 
-document.getElementById("word").addEventListener(
+theWord.addEventListener(
   'transitionend', function(e){
     e.preventDefault()
     let oldScore = score
