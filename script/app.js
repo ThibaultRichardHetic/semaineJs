@@ -159,12 +159,40 @@ function launchWord(){
 
 function selectList(){
   if (score >= 100) {
-    tableau = savane
-    document.querySelector(".mover-1").style.background = " url(../images/jungle.png)"
+    tableau = plain
+    document.querySelector(".mover-1").style.background = " url(../images/plain.png)"
   }
- if (score >= 200) {
-    tableau = plage
+  else if (score >= 200) {
+    tableau = beach
     document.querySelector(".mover-1").style.background = " url(images/beach.png)"
+  }
+  else if (score >= 300) {
+    tableau = desert
+    document.querySelector(".mover-1").style.background = " url(images/desert.png)"
+  }
+  else if (score >= 400) {
+    tableau = jungle
+    document.querySelector(".mover-1").style.background = " url(images/jungle.png)"
+  }
+  else if (score >= 500) {
+    tableau = montain
+    document.querySelector(".mover-1").style.background = " url(images/montain.png)"
+  }
+  else if (score >= 600) {
+    tableau = underWater
+    document.querySelector(".mover-1").style.background = " url(images/underWater.png)"
+  }
+  else if (score >= 700) {
+    tableau = ice
+    document.querySelector(".mover-1").style.background = " url(images/ice.png)"
+  }
+  else if (score >= 800) {
+    tableau = volcan
+    document.querySelector(".mover-1").style.background = " url(images/volcan.png)"
+  }
+  else if (score > 900) {
+    tableau = space
+    document.querySelector(".mover-1").style.background = " url(images/space.png)"
   }
   else {
     tableau = plaine
