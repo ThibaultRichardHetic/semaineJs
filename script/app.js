@@ -9,6 +9,7 @@ let vitesseMot = 15
 let tableau = plaine
 let score = 0
 let changeColor = document.getElementById("word")
+let body= document.querySelector('body')
 
 
 function aleaWord(array){
@@ -31,7 +32,7 @@ input.addEventListener(
       console.log('ok')
       form.reset()
       vitesseMot -= 1
-      score += 10
+      score += 50
       console.log(score)
       selectList()
       aleaWord(tableau)
@@ -54,6 +55,7 @@ play.addEventListener(
     menu.style.display="none"
     game.style.display="block"
     game.style.visibility="visible"
+    body.style.width="unset"
 
   }
 )
@@ -83,11 +85,13 @@ function selectList(){
     tableau = savane
     document.querySelector(".mover-1").style.background = " url(../images/jungle.png)"
   }
-  else if (score >= 200) {
+ if (score >= 200) {
     tableau = plage
+    document.querySelector(".mover-1").style.background = " url(images/plage.png)"
   }
   else {
     tableau = plaine
+
   }
 }
 
