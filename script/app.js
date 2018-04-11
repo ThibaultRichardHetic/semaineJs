@@ -18,6 +18,8 @@ function aleaWord(array){
  changeColor.innerHTML = array[alea]
 }
 aleaWord(tableau)
+launchWord()
+
 
 input.addEventListener(
   'keyup',
@@ -74,11 +76,21 @@ window.addEventListener(
   'keyup', function(e){
     e.preventDefault()
     if (e.keyCode==32) {
-    document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
-    document.getElementById("word").style.left = 30 + "%"
+      document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
+      document.getElementById("word").style.left = 30 + "%"
     }
   }
 )
+
+function launchWord(){
+  randomPosition()
+
+  setTimeout(function(){
+    document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
+    document.getElementById("word").style.left = 30 + "%"
+  },
+  3000)
+}
 
 function selectList(){
   if (score >= 100) {
