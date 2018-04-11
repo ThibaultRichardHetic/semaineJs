@@ -84,7 +84,7 @@ li:hover{
 .tech-slideshow > div {
   height: 200px;
   width: 2526px;
-  background: url("../images/cloud.png");
+  background: url("../images/cloud.png")
   background-size: 32%;
   position: absolute;
   height: 100%;
