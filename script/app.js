@@ -15,8 +15,16 @@ let playerX=0
 let playerY=0
 let wordTest, a
 let letterInWord = 0
+let speed=1
 
 
+function backgroundmove(){
+  speed-=2
+  document.querySelector('.mover-1').style.backgroundPosition = speed +"px"
+}
+function scrollbackground(){
+  setInterval(backgroundmove,10)
+}
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
@@ -131,6 +139,7 @@ form.addEventListener(
 play.addEventListener(
   'click',
   function(e){
+    scrollbackground()
     menu.style.visibility="hidden"
     menu.style.display="none"
     game.style.display="block"
