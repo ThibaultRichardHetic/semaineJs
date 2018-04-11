@@ -13,32 +13,80 @@ let body= document.querySelector('body')
 let player= document.getElementById('player')
 let playerX=0
 let playerY=0
-
+let wordTest
+let letterInWord = 0
 
 function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
- changeColor.innerHTML = array[alea]
+ wordTest = array[alea]
+ console.log(wordTest)
+ for (let i = 0; i < wordTest.length; i++) {   // création des span
+   let letter = wordTest[i]
+   createSpan(letter)
+ }
 }
 aleaWord(tableau)
 launchWord()
 
+////// pour la couleur début
+function createSpan(letter){
+  let newElement = document.createElement('span')
+  newElement.textContent = letter
+
+  let mot = document.getElementById('word')
+  mot.appendChild(newElement)
+  console.log(newElement)
+}
+
+function initialiseSpan(){
+  for (var i = 0; i < wordTest.length; i++) {
+    var d = document.getElementById("word");
+    var d_nested = document.querySelector("#word span");
+    var throwawayNode = d.removeChild(d_nested);
+  }
+  letterInWord = 0
+
+}
+
+function comparLetter(a){
+
+  if (a == tableau[alea][letterInWord]) {
+    console.log('yes')
+    letterInWord ++
+    document.querySelector('span:nth-child(' + letterInWord +')').style.color = "green"
+  }
+  else if (a != tableau[alea][letterInWord]) {
+    console.log('no')
+  }
+  else {
+    console.log('chelou')
+  }
+}
+
+////pour la couleur fin
 
 input.addEventListener(
   'keyup',
   function(e){
+    /*
     for(let i=0; i<tableau[alea].length; i++){
     if(e.key == tableau[alea][i]){
       console.log('yes')
       changeColor.style.color= "red"
     }
   }
+  */
+  let a = e.key
+  comparLetter(a)
+
     if(this.value.replace(' ','') == tableau[alea]) {
       console.log('ok')
       form.reset()
       vitesseMot -= 1
       score += 50
       console.log(score)
+      initialiseSpan()
       selectList()
       aleaWord(tableau)
       replaceScore()
