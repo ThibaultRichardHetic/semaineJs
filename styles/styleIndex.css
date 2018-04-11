@@ -4,27 +4,23 @@
   text-align: center;
 }
 
+/* Header start */
 header{
   background-color: #057061;
+  margin-top: -30px;
 }
 
-header h2{
-  font-size: 30px;
-  padding-top: 10px;
-  color: white;
+header img{
+  float: left;
+  width: 160px;
+  margin-top: 10px;
+  margin-left: 10%;
 }
 
 li{
   list-style: none;
 }
 
-/*
-li::after{
-  content: "|";
-  margin-left: 30px;
-  color: white;
-}
-*/
 
 a:hover{
   background-color: white;
@@ -51,30 +47,29 @@ a{
   height: 35px;
   padding-top: 9px;
   transition: all .3s ease-in;
+  margin-top: 65px;
 }
 
-/* header fin */
+/* header end */
 
-main h2{
-  margin: 20px;
+/* game preview start */
+main{
+  width: 80%;
+  margin: auto;
 }
-main div{
+main div.preview{
   width: 700px;
   margin: auto;
 }
-main div img{
+main div.preview img{
   width: 700px;
   display: block;
   margin: auto;
   margin-bottom: 10px;
+  margin-top: 30px;
 }
-main div h6{
-  font-size: 20px;
-  text-align: left;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-main div a{
+
+main div.preview a{
   display: block;
   background-color: #057061;
   width: 300px;
@@ -82,17 +77,35 @@ main div a{
   padding-top: 5px;
   border: solid 2px white;
   border-radius: 20px;
+  margin-top: -100px;
+  position: relative;
+  margin-left: 195px;
+}
+/* game preview end */
+
+/* 3-col start */
+div.regrouping{
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-around;
 }
 
-main div span{
-  display: block;
-  font-size: 16px;
-  text-align: left;
-  margin-left: 25px;
-  margin-top: 2px;
+.col3{
+  width: 30%;
+  float: left;
+}
+.clearBoth{
+  clear: both;
+}
+/* 3-col end */
+
+main h2{
+  margin: 20px;
 }
 
-/* fin du main */
+
+
+/* main end */
 footer{
   margin-top: 20px;
   background-color: #057061;
