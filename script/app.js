@@ -26,6 +26,7 @@ function scrollbackground(){
   setInterval(backgroundmove,10)
 }
 function aleaWord(array){
+  launchWord()
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
  wordTest = array[alea]
@@ -36,7 +37,7 @@ function aleaWord(array){
  }
 }
 aleaWord(tableau)
-launchWord()
+
 
 ////// pour la couleur début
 function createSpan(letter){
@@ -176,7 +177,7 @@ function launchWord(){
     document.getElementById("word").style.transition = "left " + vitesseMot + "s ease-out"
     document.getElementById("word").style.left = 30 + "%"
   },
-  3000)
+  2000)
 }
 
 function selectList(){
