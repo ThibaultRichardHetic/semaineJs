@@ -164,7 +164,7 @@ function selectList(){
   }
  if (score >= 200) {
     tableau = plage
-    document.querySelector(".mover-1").style.background = " url(images/plage.png)"
+    document.querySelector(".mover-1").style.background = " url(images/beach.png)"
   }
   else {
     tableau = plaine
