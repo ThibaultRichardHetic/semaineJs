@@ -47,12 +47,13 @@ input.addEventListener(
   }
 )
 function displayPlayer(){
-  player.style.top= (playerY) + 'px'
-  player.style.left= (playerX) + 'px'
+  player.style.top= (playerY-100) + 'px'
+  player.style.left= (playerX-100) + 'px'
 }
-player.addEventListener(
+game.addEventListener(
   'mousemove',
   function(e) {
+    console.log(e)
     playerY = e.clientY
     playerX = e.clientX
     displayPlayer()
