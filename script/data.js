@@ -13,7 +13,7 @@ const beach = ["sable", "mer", "poisson", "crabe", "moule", "huître", "Château
 
 //niveau 2
 
-const cloud = ["aéronautique", "atmosphère", "providence", "condensation", "altocumulus", "septième-ciel", "ouranos"]
+const cloud = ["aéronautique", "atmosphère", "providence", "condensation", "altocumulus", "ciel", "ouranos", "nuage", "vent", "air"]
 
 const jungle = ["sauvage", "amazonie", "biodiversité", "tropical", "fiévreux", "chaleur", "humidité", "maladie", "amazones", "aborigène"]
 

@@ -6,7 +6,7 @@ let menu = document.getElementById('menu')
 let game = document.getElementById('game')
 let jungles = document.getElementById('jungle')
 let vitesseMot = 15
-let tableau = plain
+let tableau = cloud
 let score = 0
 let changeColor = document.getElementById("word")
 let body= document.querySelector('body')
@@ -87,7 +87,7 @@ input.addEventListener(
       score += 50
       console.log(score)
       initialiseSpan()
-      selectList()
+      selectList()  //
       aleaWord(tableau)
       replaceScore()
 
@@ -195,7 +195,7 @@ function selectList(){
     document.querySelector(".mover-1").style.background = " url(images/space.png)"
   }
   else {
-    tableau = plaine
+    tableau = cloud
 
   }
 }
