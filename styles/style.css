@@ -32,6 +32,7 @@ height: 50px;
 img{
   position: relative;
       width: 60%;
+      width: 40%;
 }
 .game{
   visibility: hidden;
