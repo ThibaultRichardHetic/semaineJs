@@ -34,7 +34,8 @@ function animation(fond){
       decorations.style.background = "url(../images/" + fond + ".png)"
       decorations.style.backgroundSize = "contain"
       playerAnim.className="player-anim-2"
-  },1000)
+
+  },2000)
   setTimeout(() => {
       playerAnim.className="player-anim-1"
       playerAnim.style.animationPlayState="paused"
@@ -140,7 +141,7 @@ function launchWord(){
     theWord.style.transition = "left " + vitesseMot + "s ease-out"
     theWord.style.left = 9 + "%"
   },
-  1000)
+  2000)
 }
 let moveIsPossiblle =0
 function selectList(){
@@ -256,6 +257,7 @@ input.addEventListener(
 )
 
 player.style.animationPlayState="paused"
+
 form.addEventListener(
   'submit',
   function(e){
@@ -276,7 +278,7 @@ startGame.addEventListener(
 
     departGame()
     pseudoEffect()
-    input.autofocus= "true"
+
     musicBack.play();
   }
 
