@@ -101,7 +101,7 @@ function comparLetter(a){
 
 function displayPlayer(){
   player.style.top= (playerY-100) + 'px'
-  player.style.left= (playerX-100) + 'px'
+
 }
 
 function randomPosition(){
@@ -174,7 +174,7 @@ function addCombo(){
     document.getElementById("combo").innerHTML = "combo : " + combo
   }
   else {
-    combo = 0
+    combo = 1
     document.getElementById("combo").innerHTML = "combo : " + combo
 
   }
@@ -205,7 +205,7 @@ input.addEventListener(
   }
 )
 
-game.addEventListener(
+decorations.addEventListener(
   'mousemove',
   function(e) {
     //console.log(e)
