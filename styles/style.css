@@ -5,7 +5,7 @@ h1, h2, h3, a{
   font-family: 'Roboto Condensed', sans-serif;
 }
 .mover-1{
-  background: url("../images/cloud.png")
+  background-image: url("../images/cloud.png")
 }
 #word{
   z-index: 100;
