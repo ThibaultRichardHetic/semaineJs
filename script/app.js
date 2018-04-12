@@ -24,7 +24,6 @@ setInterval(aleaWord(tableau),testconsole(), 1000);
 function testconsole(){
   console.log("en boucle")
 }
-//setInterval(aleaWord(tableau){ console.log("boucle") }, 3000)
 
 
 ///// ALL FUNCTIONS START
@@ -43,7 +42,6 @@ function aleaWord(array){
  alea = parseInt(Math.floor(Math.random() * array.length))
  randomPosition()
  wordTest = array[alea]
- console.log(wordTest)
  for (let i = 0; i < wordTest.length; i++) {   // création des span
    let letter = wordTest[i]
    createSpan(letter)
@@ -56,7 +54,6 @@ function createSpan(letter){
   newElement.textContent = letter
   let mot = theWord
   mot.appendChild(newElement)
-  console.log(newElement)
 }
 
 function initialiseSpan(){
@@ -86,11 +83,12 @@ function comparLetter(a){
     console.log(a)
     letterInWord ++
     comboIsPossible = 0
+    console.log('comboIsPossible : ' + comboIsPossible)
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord) +')').style.color = "red"
   }
   else {
-    console.log('chelou')
+    console.log('bug')
   }
 }
 ////pour la couleur fin
@@ -118,19 +116,15 @@ function launchWord(){
 }
 
 function selectList(){
-  console.log('selectList')
   if (score >= 100 && score < 200) {
-    console.log('plain')
     tableau = plain
     decorations.style.background = " url(../images/plain.png)"
   }
   else if (score >= 200 && score < 300) {
-    console.log('beach')
     tableau = beach
     decorations.style.background = " url(../images/beach.png)"
   }
   else if (score >= 300 && score < 400) {
-    console.log('desert')
     tableau = desert
     decorations.style.background = " url(../images/desert.png)"
   }
@@ -174,6 +168,7 @@ function addCombo(){
     document.getElementById("combo").innerHTML = "combo : " + combo
   }
   else {
+    combo = 0
     document.getElementById("combo").innerHTML = "combo : " + combo
 
   }
