@@ -140,52 +140,61 @@ function launchWord(){
     theWord.style.transition = "left " + vitesseMot + "s ease-out"
     theWord.style.left = 9 + "%"
   },
-  2000)
+  1000)
 }
-
+let moveIsPossiblle =0
 function selectList(){
-  if (score >= 100 && score < 200) {
+  if (score >= 100 && score < 200 && moveIsPossiblle == 0) {
     tableau = plain
+    moveIsPossiblle=1
     let fond = "plain"
     animation(fond)
   }
-  else if (score >= 200 && score < 300) {
+  else if (score >= 200 && score < 300 && moveIsPossiblle == 1) {
     tableau = beach
+    moveIsPossiblle=2
     let fond = "beach"
     animation(fond)
   }
-  else if (score >= 300 && score < 400) {
+  else if (score >= 300 && score < 400 && moveIsPossiblle == 2) {
     tableau = desert
+    moveIsPossiblle=3
     let fond = "desert"
     animation(fond)
   }
-  else if (score >= 400 && score < 500) {
+  else if (score >= 400 && score < 500 && moveIsPossiblle == 3) {
     tableau = jungle
+    moveIsPossiblle=4
     let fond = "jungle"
     animation(fond)
   }
-  else if (score >= 500 && score < 600) {
+  else if (score >= 500 && score < 600 && moveIsPossiblle == 4) {
     tableau = montain
+    moveIsPossiblle=5
     let fond = "montain"
     animation(fond)
   }
-  else if (score >= 600 && score < 700) {
+  else if (score >= 600 && score < 700 && moveIsPossiblle == 5) {
     tableau = underWater
+    moveIsPossiblle=6
     let fond = "underWater"
     animation(fond)
   }
-  else if (score >= 700 && score < 800) {
+  else if (score >= 700 && score < 800 && moveIsPossiblle == 6) {
     tableau = ice
+    moveIsPossiblle=7
     let fond = "ice"
     animation(fond)
   }
-  else if (score >= 800 && score < 900) {
+  else if (score >= 800 && score < 900 && moveIsPossiblle == 7) {
     tableau = volcan
+    moveIsPossiblle=8
     let fond = "volcan"
     animation(fond)
   }
-  else if (score > 900) {
+  else if (score > 900 && moveIsPossiblle == 8) {
     tableau = space
+    moveIsPossiblle=9
     let fond = "space"
     animation(fond)
   }
