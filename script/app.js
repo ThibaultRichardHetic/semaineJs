@@ -144,21 +144,21 @@ function launchWord(){
 let moveIsPossiblle =0
 function selectList(){
   if (score >= 100 && score < 200 && moveIsPossiblle == 0) {
-    tableau = plain
+    tableau = desert
     moveIsPossiblle=1
-    let fond = "plain"
+    let fond = "desert"
     animation(fond)
   }
   else if (score >= 200 && score < 300 && moveIsPossiblle == 1) {
-    tableau = beach
+    tableau = volcan
     moveIsPossiblle=2
-    let fond = "beach"
+    let fond = "volcan"
     animation(fond)
   }
   else if (score >= 300 && score < 400 && moveIsPossiblle == 2) {
-    tableau = desert
+    tableau = ice
     moveIsPossiblle=3
-    let fond = "desert"
+    let fond = "ice"
     animation(fond)
   }
   else if (score >= 400 && score < 500 && moveIsPossiblle == 3) {
@@ -180,15 +180,15 @@ function selectList(){
     animation(fond)
   }
   else if (score >= 700 && score < 800 && moveIsPossiblle == 6) {
-    tableau = ice
+    tableau = plain
     moveIsPossiblle=7
-    let fond = "ice"
+    let fond = "plain"
     animation(fond)
   }
   else if (score >= 800 && score < 900 && moveIsPossiblle == 7) {
-    tableau = volcan
+    tableau = beach
     moveIsPossiblle=8
-    let fond = "volcan"
+    let fond = "beach"
     animation(fond)
   }
   else if (score > 900 && moveIsPossiblle == 8) {
