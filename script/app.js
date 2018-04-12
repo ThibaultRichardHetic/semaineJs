@@ -276,6 +276,7 @@ startGame.addEventListener(
 
     // launchWord()
     input.focus()
+  
 
     departGame()
     pseudoEffect()
@@ -302,6 +303,8 @@ theWord.addEventListener(
     endGame.style.visibility="visible"
     let gameOver = new Audio("../images/perdu.wav");
     gameOver.play();
+    input.disabled="true"
+
 
   }
 )
