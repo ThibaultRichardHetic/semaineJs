@@ -20,8 +20,10 @@ let speed = 1
 let comboIsPossible = 0
 let combo = 1
 
+function departGame(){
+  setInterval(aleaWord(tableau),testconsole(), 1000);
 
-setInterval(aleaWord(tableau),testconsole(), 1000);
+}
 
 function testconsole(){
   console.log("en boucle")
@@ -234,8 +236,8 @@ startGame.addEventListener(
   function(e){
     scrollbackground()
     startGame.style.zIndex="0"
-    startGame.style.visibility="hidden"
-    // launchWord()
+    startGame.style.visibility="hidden"  
+    departGame()
     input.autofocus= "true"
   }
   )
