@@ -101,6 +101,50 @@ function displayPlayer(){
   player.style.left= (playerX-100) + 'px'
 }
 
+<<<<<<< HEAD
+=======
+
+backgroundGame.addEventListener(
+  'mousemove',
+  function(e) {
+    //console.log(e)
+    playerY = e.clientY
+
+    displayPlayer()
+    //console.log(playerY)
+  }
+)
+
+form.addEventListener(
+  'submit',
+  function(e){
+    e.preventDefault()
+  }
+)
+play.addEventListener(
+  'click',
+  function(e){
+    menu.style.visibility="hidden"
+    menu.style.display="none"
+    game.style.display="block"
+    game.style.visibility="visible"
+    body.style.width="unset"
+  }
+)
+startGame.addEventListener(
+  'click',
+  function(e){
+    scrollbackground()
+    startGame.style.zIndex="0"
+    startGame.style.visibility="hidden"
+    launchWord()
+    input.autofocus= "true"
+  }
+)
+
+
+
+>>>>>>> cdff03a427efc2964d0dfe3e31168be377d15864
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
   let height = 10 + x
@@ -219,7 +263,7 @@ form.addEventListener(
 play.addEventListener(
   'click',
   function(e){
-    scrollbackground()
+
     menu.style.visibility="hidden"
     menu.style.display="none"
     game.style.display="block"
