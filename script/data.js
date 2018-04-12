@@ -7,7 +7,7 @@ const plain = ["prairie", "mouton", "herbe", "ferme", "vache", "taureau", "poule
 
 const desert = ["sable", "cactus", "oasis", "sahara", "aridité", "nil", "toureg", "sirocco", "scorpion", "lézard", "chameau", "dune", "mirage", "dromadaire"]
 
-const beach = ["sable", "mer", "poisson", "crabe", "moule", "huître", "Château de sable", "parasol", "pelle", "pêcheur", "baignade", "houle", "sceau", "littoral", "écume", "blockhaus", "thon", "saumon", "cabillaud",
+const beach = ["sable", "mer", "poisson", "crabe", "moule", "parasol", "pelle", "baignade", "houle", "sceau", "littoral", "écume", "blockhaus", "thon", "saumon", "cabillaud",
 "épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "tong", "galet"
 ,"voilier", "mouette", "phare" ,"épave", "cerf-volant", "coquillages", "serviette", "crème", "solaire", "soleil", "tong", "galet", "voilier", "mouette", "phare"]
 
