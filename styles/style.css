@@ -102,3 +102,26 @@ li:hover{
   opacity: 0.7;
   justify-content: center;
 }
+
+div.game div.startGame h3{
+  text-align: center;
+  margin-top: 150px;
+}
+
+div.game div.startGame p{
+  text-align: center;
+}
+
+#pseudo{
+  top: 20px;
+}
+
+#score{
+  top: 20px;
+  left: 48%;
+}
+
+#combo{
+  top: -20px;
+  left: 80%;
+}

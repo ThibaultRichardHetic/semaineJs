@@ -116,7 +116,7 @@ function launchWord(){
   randomPosition()
   setTimeout(function(){
     theWord.style.transition = "left " + vitesseMot + "s ease-out"
-    theWord.style.left = 30 + "%"
+    theWord.style.left = 9 + "%"
   },
   2000)
 }
@@ -236,7 +236,7 @@ startGame.addEventListener(
   function(e){
     scrollbackground()
     startGame.style.zIndex="0"
-    startGame.style.visibility="hidden"  
+    startGame.style.visibility="hidden"
     departGame()
     input.autofocus= "true"
   }
@@ -247,7 +247,7 @@ window.addEventListener(
     e.preventDefault()
     if (e.keyCode==32) {
       theWord.style.transition = "left " + vitesseMot + "s ease-out"
-      theWord.style.left = 30 + "%"
+      theWord.style.left = 9 + "%"
     }
   }
 )
