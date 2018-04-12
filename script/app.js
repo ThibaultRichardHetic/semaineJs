@@ -20,6 +20,7 @@ let speed = 1
 let comboIsPossible = 0
 let combo = 1
 let playerAnim=document.querySelector('.player-anim-1')
+let endGame=document.getElementById('endGame')
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -38,11 +39,6 @@ function animation(){
 }
 //setInterval(aleaWord(tableau),testconsole(), 1000);
 
-function testconsole(){
-  console.log("en boucle")
-
-
-}
 
 function pseudoEffect(){
   //pseudo = document.getElementById('yourPseudo').value
@@ -235,7 +231,6 @@ input.addEventListener(
 )
 
 
-
 form.addEventListener(
   'submit',
   function(e){
@@ -251,7 +246,6 @@ play.addEventListener(
     game.style.visibility="visible"
     body.style.width="unset"
     player.style.animationPlayState="paused"
-
   }
 )
 
@@ -259,7 +253,6 @@ startGame.addEventListener(
   'click',
   function(e){
     scrollbackground()
-    startGame.style.zIndex="0"
     startGame.style.visibility="hidden"
 
     // launchWord()
@@ -286,7 +279,13 @@ theWord.addEventListener(
     e.preventDefault()
     let oldScore = score
     score = 0
-    window.alert('vous avez perdu, votre score est de : ' + oldScore)
+    endGame.style.visibility="visible"
+
+
+
+
+
+
   }
 )
 
