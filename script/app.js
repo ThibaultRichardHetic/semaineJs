@@ -14,21 +14,22 @@ let tableau = cloud
 let score = 0
 let playerX = 0
 let playerY = 0
-let wordTest, a , alea
+let wordTest, a , alea, pseudo
 let letterInWord = 0
 let speed = 1
 let comboIsPossible = 0
 let combo = 1
 
 function departGame(){
-  setInterval(aleaWord(tableau),testconsole(), 1000);
+  setInterval(aleaWord(tableau), 1000);
 
 }
 
-function testconsole(){
-  console.log("en boucle")
+function pseudoEffect(){
+  //pseudo = document.getElementById('yourPseudo').value
+  console.log(document.getElementById('yourPseudo'))
+  //console.log(pseudo)
 }
-
 
 ///// ALL FUNCTIONS START
 
@@ -238,6 +239,7 @@ startGame.addEventListener(
     startGame.style.zIndex="0"
     startGame.style.visibility="hidden"
     departGame()
+    pseudoEffect()
     input.autofocus= "true"
   }
   )
