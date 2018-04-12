@@ -41,10 +41,7 @@ function animation(){
 function testconsole(){
   console.log("en boucle")
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 71b8cf448fae9114d251558ebff08c7247a47c09
 }
 
 function pseudoEffect(){
@@ -237,14 +234,7 @@ input.addEventListener(
   }
 )
 
-decorations.addEventListener(
-  'mousemove',
-  function(e) {
-    //console.log(e)
-    playerY = e.clientY
-    displayPlayer()
-  }
-)
+
 
 form.addEventListener(
   'submit',
@@ -278,10 +268,6 @@ startGame.addEventListener(
     departGame()
     pseudoEffect()
     input.autofocus= "true"
-<<<<<<< HEAD
-
-=======
->>>>>>> 71b8cf448fae9114d251558ebff08c7247a47c09
   }
   )
 

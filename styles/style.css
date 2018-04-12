@@ -102,8 +102,6 @@ li:hover{
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
 div.game div.startGame h3{
   text-align: center;
   margin-top: 150px;
@@ -127,7 +125,6 @@ div.game div.startGame p{
   left: 80%;
 }
 
->>>>>>> 71b8cf448fae9114d251558ebff08c7247a47c09
 .player-anim-1 {
 animation-name: fadeOutRightBig;
 animation-duration: 2s;
@@ -160,31 +157,4 @@ transform: translate3d(-100%, 0, 0);
 opacity: 1;
 -webkit-transform: none;
 transform: none;
-}
-<<<<<<< HEAD
-
-div.game div.startGame h3{
-  text-align: center;
-  margin-top: 150px;
-}
-
-div.game div.startGame p{
-  text-align: center;
-}
-
-#pseudo{
-  top: 20px;
-}
-
-#score{
-  top: 20px;
-  left: 48%;
-}
-
-#combo{
-  top: -20px;
-  left: 80%;
-
-=======
->>>>>>> 71b8cf448fae9114d251558ebff08c7247a47c09
 }
