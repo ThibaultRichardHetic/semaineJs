@@ -29,7 +29,6 @@ function testconsole(){
 
 ///// ALL FUNCTIONS START
 
-
 function backgroundmove(){
   speed-=2
   decorations.style.backgroundPosition = speed +"px"
