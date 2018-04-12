@@ -8,6 +8,7 @@ let theWord = document.getElementById('word')
 let body = document.querySelector('body')
 let player = document.getElementById('player')
 let decorations = document.querySelector('.mover-1')
+let wordExistant = []
 let vitesseMot = 15
 let tableau = cloud
 let score = 0
@@ -38,12 +39,14 @@ function scrollbackground(){
 }
 
 function aleaWord(array){
-  launchWord()
+
  alea = parseInt(Math.floor(Math.random() * array.length))
- randomPosition()
+
  wordTest = array[alea]
  for (let i = 0; i < wordTest.length; i++) {   // création des span
    let letter = wordTest[i]
+   launchWord()
+   randomPosition()
    createSpan(letter)
  }
 }
@@ -202,11 +205,8 @@ input.addEventListener(
 game.addEventListener(
   'mousemove',
   function(e) {
-    //console.log(e)
     playerY = e.clientY
-    playerX = e.clientX
     displayPlayer()
-    //console.log(playerY)
   }
 )
 
@@ -225,7 +225,6 @@ play.addEventListener(
     game.style.display="block"
     game.style.visibility="visible"
     body.style.width="unset"
-
   }
 )
 
