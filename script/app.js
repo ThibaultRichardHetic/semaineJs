@@ -123,7 +123,6 @@ function comparLetter(a){
 
 function displayPlayer(){
   player.style.top= (playerY-100) + 'px'
-
 }
 
 function randomPosition(){
@@ -215,7 +214,7 @@ function addCombo(){
   if (comboIsPossible > 2) {
     if (combo <= 4) {
       combo += 0.5
-    }  
+    }
     document.getElementById("combo").innerHTML = "combo : " + combo
   }
   else {
