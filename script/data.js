@@ -27,13 +27,13 @@ const ice = ["glacier", "précipitations", "glace", "alpinisme", "ascension", "d
 
 const volcan = ["magma", "lave", "terrestre", "explosion", "cendres", "fumée", "catastrophe", "naturel", "gaz", "volcanique", "eruption", "plinienne"]
 
-const space = ["supernova", "voie-lactée", "trou-noir", "astronaute", "fusée", "étoile", "nébuleuses", "système-solaire", "lumière", "ellipsoïde", "starburst", "andromède", "atmosphère", "interstellaire", "pluton", "jupiter", "téléscope", "espace", "singularité",
+const space = ["supernova", "voie-lactée", "trou-noir", "astronaute", "fusée", "étoile", "nébuleuses", "système-solaire", "lumière", "starburst", "andromède", "atmosphère", "interstellaire", "pluton", "jupiter", "téléscope", "espace", "singularité",
 "hawking", "univers", "big-bang"]
 
 
 // dans aucun niveau
 
-const ville = ["immeuble", "gratte ciel", "monumental", "avenue", "boulevard", "véhicule", "métropolitain", "tramway"]
+const ville = ["immeuble", "gratte-ciel", "monumental", "avenue", "boulevard", "véhicule", "métropolitain", "tramway"]
 
 
 const savane = ["lion", "guépard", "gazelle", "gnou", "girafe", "eléphant", "zèbre", "rhinocéros", "antilope", "hyènes", "vautour", "alizés", "fougères", "baobab", "tigre", "hippopotame", "crocodile", "panthère", "buffle",
