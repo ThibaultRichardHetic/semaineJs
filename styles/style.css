@@ -4,8 +4,8 @@
   position: absolute;
   left: 80%;
   margin-top: 10%;
+  background: url("../images/missile-2.png");
   /*transition: left 0s ease-out;*/
-
 }
 div.info span{
   color: white;
@@ -102,6 +102,41 @@ li:hover{
   opacity: 0.7;
   justify-content: center;
 }
+<<<<<<< HEAD
+.player-anim-1 {
+animation-name: fadeOutRightBig;
+animation-duration: 2s;
+animation-fill-mode: both;
+}
+
+.player-anim-2 {
+  animation-name: fadeInLeft;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutRightBig {
+0% {
+opacity: 1;
+}
+100% {
+opacity: 0;
+-webkit-transform: translate3d(2000px, 0, 0);
+transform: translate3d(2000px, 0, 0);
+}
+}
+@keyframes fadeInLeft {
+0% {
+opacity: 0;
+-webkit-transform: translate3d(-100%, 0, 0);
+transform: translate3d(-100%, 0, 0);
+}
+100% {
+opacity: 1;
+-webkit-transform: none;
+transform: none;
+}
+=======
 
 div.game div.startGame h3{
   text-align: center;
@@ -124,4 +159,5 @@ div.game div.startGame p{
 #combo{
   top: -20px;
   left: 80%;
+>>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
 }

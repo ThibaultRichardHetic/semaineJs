@@ -19,10 +19,29 @@ let letterInWord = 0
 let speed = 1
 let comboIsPossible = 0
 let combo = 1
+let playerAnim=document.querySelector('.player-anim-1')
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
 
+<<<<<<< HEAD
+function animation(){
+  playerAnim.style.animationPlayState="running"
+  setTimeout(() => {
+      decorations.style.background = " url(../images/plain.png)"
+      playerAnim.className="player-anim-2"
+  },1000)
+  setTimeout(() => {
+      playerAnim.className="player-anim-1"
+      playerAnim.style.animationPlayState="paused"
+  },4000)
+}
+setInterval(aleaWord(tableau),testconsole(), 1000);
+
+function testconsole(){
+  console.log("en boucle")
+=======
+>>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
 }
 
 function pseudoEffect(){
@@ -32,6 +51,7 @@ function pseudoEffect(){
 }
 
 ///// ALL FUNCTIONS START
+
 
 function backgroundmove(){
   speed-=2
@@ -125,39 +145,47 @@ function launchWord(){
 function selectList(){
   if (score >= 100 && score < 200) {
     tableau = plain
-    decorations.style.background = " url(../images/plain.png)"
+    animation()
   }
   else if (score >= 200 && score < 300) {
     tableau = beach
     decorations.style.background = " url(../images/beach.png)"
+    animation()
   }
   else if (score >= 300 && score < 400) {
     tableau = desert
     decorations.style.background = " url(../images/desert.png)"
+    animation()
   }
   else if (score >= 400 && score < 500) {
     tableau = jungle
     decorations.style.background = " url(../images/jungle.png)"
+    animation()
   }
   else if (score >= 500 && score < 600) {
     tableau = montain
     decorations.style.background = " url(../images/montain.png)"
+    animation()
   }
   else if (score >= 600 && score < 700) {
     tableau = underWater
     decorations.style.background = " url(../images/underWater.png)"
+    animation()
   }
   else if (score >= 700 && score < 800) {
     tableau = ice
     decorations.style.background = " url(../images/ice.png)"
+    animation()
   }
   else if (score >= 800 && score < 900) {
     tableau = volcan
     decorations.style.background = " url(../images/volcan.png)"
+    animation()
   }
   else if (score > 900) {
     tableau = space
     decorations.style.background = " url(../images/space.png)"
+    animation()
   }
   else {
     tableau = cloud
@@ -229,6 +257,8 @@ play.addEventListener(
     game.style.display="block"
     game.style.visibility="visible"
     body.style.width="unset"
+    player.style.animationPlayState="paused"
+
   }
 )
 
@@ -238,9 +268,14 @@ startGame.addEventListener(
     scrollbackground()
     startGame.style.zIndex="0"
     startGame.style.visibility="hidden"
+<<<<<<< HEAD
+    // launchWord()
+    input.autofocus
+=======
     departGame()
     pseudoEffect()
     input.autofocus= "true"
+>>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
   }
   )
 
