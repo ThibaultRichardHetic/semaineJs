@@ -274,18 +274,20 @@ window.addEventListener(
 theWord.addEventListener(
   'transitionend', function(e){
     e.preventDefault()
-    let oldScore = score
-    score = 0
     endGame.style.visibility="visible"
-
-
-
-
-
-
+    addScore()
+    getHighScores
   }
 )
+function addScore(score){
+    var scores = getHighScores();
+    scores.push(score);
+    scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
+    localStorage.setItem("highscores", JSON.stringify(scores));
+}
 
-
+function getHighScores(){
+    return JSON.parse(localStorage.getItem("highscores")) || new Array(3);
+}
 
 ///// ALL EVENT END
