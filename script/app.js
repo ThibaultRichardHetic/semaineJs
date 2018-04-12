@@ -21,7 +21,7 @@ let comboIsPossible = 0
 let combo = 1
 let playerAnim=document.querySelector('.player-anim-1')
 let endGame=document.getElementById('endGame')
-
+let musicBack = new Audio("../images/musicfond.wav");
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -52,6 +52,7 @@ function pseudoEffect(){
 
 
 function backgroundmove(){
+  speed-=2
   speed-=1
   decorations.style.backgroundPosition = speed +"px"
 }
@@ -61,7 +62,8 @@ function scrollbackground(){
 }
 
 function aleaWord(array){
-  alea = parseInt(Math.floor(Math.random() * array.length))
+
+ alea = parseInt(Math.floor(Math.random() * array.length))
 
  wordTest = array[alea]
  for (let i = 0; i < wordTest.length; i++) {   // création des span
@@ -81,6 +83,10 @@ function createSpan(letter){
 }
 
 function initialiseSpan(){
+  for (var i = 0; i < wordTest.length; i++) {
+    var d = theWord;
+    var d_nested = document.querySelector("#word span");
+    var throwawayNode = d.removeChild(d_nested);
   for (let i = 0; i < wordTest.length; i++) {
     let d = theWord;
     let creation = document.querySelector("#word span");
@@ -102,14 +108,18 @@ function comparLetter(a){
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
   }
+  else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace') && (a != 'Tab')) {
     console.log('no')
+    let erreur = new Audio("../images/erreur.wav");
+    erreur.play();
     console.log(a)
     letterInWord ++
     comboIsPossible = 0
     console.log('comboIsPossible : ' + comboIsPossible)
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord) +')').style.color = "red"
+
   }
   else {
     console.log('bug')
@@ -214,8 +224,11 @@ input.addEventListener(
   'keyup',
   function(e){
   a = e.key
+  comparLetter(a)
   comparLetter(a)// quand le mot est bon
     if(this.value.replace(' ','') == tableau[alea]) {
+      let audio = new Audio("../images/valide.wav");
+      audio.play();
       console.log('ok')
       form.reset()
       comboIsPossible ++
@@ -230,6 +243,7 @@ input.addEventListener(
       selectList()  //
       aleaWord(tableau)
       replaceScore()
+
     }
   }
 )
@@ -258,8 +272,14 @@ startGame.addEventListener(
   function(e){
     scrollbackground()
     startGame.style.visibility="hidden"
+
+    // launchWord()
+    input.autofocus
+
     departGame()
     pseudoEffect()
+    input.autofocus= "true"
+    musicBack.play();
   }
   )
 
@@ -276,20 +296,22 @@ window.addEventListener(
 theWord.addEventListener(
   'transitionend', function(e){
     e.preventDefault()
+    musicBack.pause()
     endGame.style.visibility="visible"
-    addScore()
-    getHighScores
+    let gameOver = new Audio("../images/perdu.wav");
+    gameOver.play();
+
   }
 )
+<<<<<<< HEAD
+=======
 function addScore(score){
     let scores = getHighScores();
     scores.push(score);
     scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
     localStorage.setItem("highscores", JSON.stringify(scores));
 }
+>>>>>>> ac8ab5716e2360e1f7bc4aea4db0bd5de4bdc597
 
-function getHighScores(){
-    return JSON.parse(localStorage.getItem("highscores")) || new Array(3);
-}
 
-///// ALL EVENT END
+///// ALL EVENT START
