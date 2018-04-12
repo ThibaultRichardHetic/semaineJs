@@ -14,14 +14,17 @@ let tableau = cloud
 let score = 0
 let playerX = 0
 let playerY = 0
-let wordTest, a , alea
+let wordTest, a , alea, pseudo
 let letterInWord = 0
 let speed = 1
 let comboIsPossible = 0
 let combo = 1
 let playerAnim=document.querySelector('.player-anim-1')
 
+function departGame(){
+  setInterval(aleaWord(tableau), 1000);
 
+<<<<<<< HEAD
 function animation(){
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
@@ -37,8 +40,15 @@ setInterval(aleaWord(tableau),testconsole(), 1000);
 
 function testconsole(){
   console.log("en boucle")
+=======
+>>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
 }
 
+function pseudoEffect(){
+  //pseudo = document.getElementById('yourPseudo').value
+  console.log(document.getElementById('yourPseudo'))
+  //console.log(pseudo)
+}
 
 ///// ALL FUNCTIONS START
 
@@ -127,7 +137,7 @@ function launchWord(){
   randomPosition()
   setTimeout(function(){
     theWord.style.transition = "left " + vitesseMot + "s ease-out"
-    theWord.style.left = 30 + "%"
+    theWord.style.left = 9 + "%"
   },
   2000)
 }
@@ -258,8 +268,14 @@ startGame.addEventListener(
     scrollbackground()
     startGame.style.zIndex="0"
     startGame.style.visibility="hidden"
+<<<<<<< HEAD
     // launchWord()
     input.autofocus
+=======
+    departGame()
+    pseudoEffect()
+    input.autofocus= "true"
+>>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
   }
   )
 
@@ -268,7 +284,7 @@ window.addEventListener(
     e.preventDefault()
     if (e.keyCode==32) {
       theWord.style.transition = "left " + vitesseMot + "s ease-out"
-      theWord.style.left = 30 + "%"
+      theWord.style.left = 9 + "%"
     }
   }
 )
