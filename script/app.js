@@ -217,11 +217,11 @@ function addCombo(){
     if (combo <= 4) {
       combo += 0.5
     }
-    document.getElementById("combo").innerHTML = "combo : " + combo
+    document.getElementById("combo").innerHTML = "combo X  " + combo
   }
   else {
     combo = 1
-    document.getElementById("combo").innerHTML = "combo : " + combo
+    document.getElementById("combo").innerHTML = " "
 
   }
 }
@@ -251,7 +251,6 @@ input.addEventListener(
       selectList()  //
       aleaWord(tableau)
       replaceScore()
-
     }
   }
 )
@@ -279,7 +278,6 @@ startGame.addEventListener( // quand on clique une première fois
 
     musicBack.play();
   }
-
   )
 
 window.addEventListener( //Lorsqu'une touche est actionnée
