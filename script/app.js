@@ -191,7 +191,8 @@ function selectList(){
   }
   else {
     tableau = cloud
-
+    decorations.style.background = "url(../images/cloud.png)"
+    decorations.style.backgroundSize = "contain"
   }
 }
 
