@@ -21,7 +21,7 @@ let comboIsPossible = 0
 let combo = 1
 let playerAnim=document.querySelector('.player-anim-1')
 let endGame=document.getElementById('endGame')
-
+let musicBack = new Audio("../images/musicfond.wav");
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -60,7 +60,8 @@ function scrollbackground(){
 }
 
 function aleaWord(array){
-  alea = parseInt(Math.floor(Math.random() * array.length))
+
+ alea = parseInt(Math.floor(Math.random() * array.length))
 
  wordTest = array[alea]
  for (let i = 0; i < wordTest.length; i++) {   // création des span
@@ -103,12 +104,15 @@ function comparLetter(a){
   }
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
     console.log('no')
+    let erreur = new Audio("../images/erreur.wav");
+    erreur.play();
     console.log(a)
     letterInWord ++
     comboIsPossible = 0
     console.log('comboIsPossible : ' + comboIsPossible)
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord) +')').style.color = "red"
+
   }
   else {
     console.log('bug')
@@ -215,6 +219,8 @@ input.addEventListener(
   a = e.key
   comparLetter(a)
     if(this.value.replace(' ','') == tableau[alea]) {
+      let audio = new Audio("../images/valide.wav");
+      audio.play();
       console.log('ok')
       form.reset()
       comboIsPossible ++
@@ -227,6 +233,7 @@ input.addEventListener(
       selectList()  //
       aleaWord(tableau)
       replaceScore()
+
     }
   }
 )
@@ -255,8 +262,14 @@ startGame.addEventListener(
   function(e){
     scrollbackground()
     startGame.style.visibility="hidden"
+
+    // launchWord()
+    input.autofocus
+
     departGame()
     pseudoEffect()
+    input.autofocus= "true"
+    musicBack.play();
   }
   )
 
@@ -273,20 +286,13 @@ window.addEventListener(
 theWord.addEventListener(
   'transitionend', function(e){
     e.preventDefault()
+    musicBack.pause()
     endGame.style.visibility="visible"
-    addScore()
-    getHighScores
+    let gameOver = new Audio("../images/perdu.wav");
+    gameOver.play();
+
   }
 )
-function addScore(score){
-    var scores = getHighScores();
-    scores.push(score);
-    scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
-    localStorage.setItem("highscores", JSON.stringify(scores));
-}
 
-function getHighScores(){
-    return JSON.parse(localStorage.getItem("highscores")) || new Array(3);
-}
 
-///// ALL EVENT END
+///// ALL EVENT START
