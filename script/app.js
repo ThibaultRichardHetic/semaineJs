@@ -22,6 +22,7 @@ let combo = 1
 let playerAnim=document.querySelector('.player-anim-1')
 let endGame=document.getElementById('endGame')
 
+
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
 }
@@ -59,8 +60,7 @@ function scrollbackground(){
 }
 
 function aleaWord(array){
-
- alea = parseInt(Math.floor(Math.random() * array.length))
+  alea = parseInt(Math.floor(Math.random() * array.length))
 
  wordTest = array[alea]
  for (let i = 0; i < wordTest.length; i++) {   // création des span
@@ -255,13 +255,8 @@ startGame.addEventListener(
   function(e){
     scrollbackground()
     startGame.style.visibility="hidden"
-
-    // launchWord()
-    input.autofocus
-
     departGame()
     pseudoEffect()
-    input.autofocus= "true"
   }
   )
 
@@ -294,4 +289,4 @@ function getHighScores(){
     return JSON.parse(localStorage.getItem("highscores")) || new Array(3);
 }
 
-///// ALL EVENT START
+///// ALL EVENT END

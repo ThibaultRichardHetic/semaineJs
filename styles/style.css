@@ -110,13 +110,15 @@ div.game div#word span{
   font-size: 30px;
 }
 
-div.game div.startGame h3{
+div.game div.startGame h3, div.game div.endGame h3{
   text-align: center;
   margin-top: 150px;
+  font-size: 35px;
 }
 
-div.game div.startGame p{
+div.game div.startGame p, div.game div.endGame p{
   text-align: center;
+  font-size: 25px;
 }
 
 #pseudo{
