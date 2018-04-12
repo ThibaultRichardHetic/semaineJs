@@ -31,6 +31,7 @@ function animation(fond){
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
       decorations.style.background = "url(../images/" + fond + ".png)"
+      decorations.style.height = "100%"
       playerAnim.className="player-anim-2"
   },1000)
   setTimeout(() => {
@@ -52,6 +53,7 @@ function pseudoEffect(){
 
 function backgroundmove(){
   speed-=2
+  speed-=1
   decorations.style.backgroundPosition = speed +"px"
 }
 
@@ -85,6 +87,10 @@ function initialiseSpan(){
     var d = theWord;
     var d_nested = document.querySelector("#word span");
     var throwawayNode = d.removeChild(d_nested);
+  for (let i = 0; i < wordTest.length; i++) {
+    let d = theWord;
+    let creation = document.querySelector("#word span");
+    let throwawayNode = d.removeChild(creation);
   }
   letterInWord = 0
 }
@@ -103,6 +109,7 @@ function comparLetter(a){
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
   }
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
+  else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace') && (a != 'Tab')) {
     console.log('no')
     let erreur = new Audio("../images/erreur.wav");
     erreur.play();
@@ -218,13 +225,16 @@ input.addEventListener(
   function(e){
   a = e.key
   comparLetter(a)
+  comparLetter(a)// quand le mot est bon
     if(this.value.replace(' ','') == tableau[alea]) {
       let audio = new Audio("../images/valide.wav");
       audio.play();
       console.log('ok')
       form.reset()
       comboIsPossible ++
-      vitesseMot -= 1                    // quand le mot est bon
+      if (vitesseMot > 3) {
+        vitesseMot -= 1
+      }
       score = score + 50 * combo
       a = -1
       console.log(score)
@@ -293,6 +303,15 @@ theWord.addEventListener(
 
   }
 )
+<<<<<<< HEAD
+=======
+function addScore(score){
+    let scores = getHighScores();
+    scores.push(score);
+    scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
+    localStorage.setItem("highscores", JSON.stringify(scores));
+}
+>>>>>>> ac8ab5716e2360e1f7bc4aea4db0bd5de4bdc597
 
 
 ///// ALL EVENT START

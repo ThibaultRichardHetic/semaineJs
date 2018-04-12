@@ -121,6 +121,12 @@ div.game div.startGame p, div.game div.endGame p{
   font-size: 25px;
 }
 
+/*
+.moversyze{
+  background-size: 550px 435px;
+}
+*/
+
 #pseudo{
   top: 20px;
 }
