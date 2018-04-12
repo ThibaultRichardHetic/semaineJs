@@ -52,7 +52,6 @@ function pseudoEffect(){
 
 
 function backgroundmove(){
-  speed-=2
   speed-=1
   decorations.style.backgroundPosition = speed +"px"
 }
@@ -83,10 +82,6 @@ function createSpan(letter){
 }
 
 function initialiseSpan(){
-  for (var i = 0; i < wordTest.length; i++) {
-    var d = theWord;
-    var d_nested = document.querySelector("#word span");
-    var throwawayNode = d.removeChild(d_nested);
   for (let i = 0; i < wordTest.length; i++) {
     let d = theWord;
     let creation = document.querySelector("#word span");
@@ -108,7 +103,6 @@ function comparLetter(a){
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
   }
-  else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace') && (a != 'Tab')) {
     console.log('no')
     let erreur = new Audio("../images/erreur.wav");
@@ -224,7 +218,6 @@ input.addEventListener(
   'keyup',
   function(e){
   a = e.key
-  comparLetter(a)
   comparLetter(a)// quand le mot est bon
     if(this.value.replace(' ','') == tableau[alea]) {
       let audio = new Audio("../images/valide.wav");
