@@ -200,8 +200,8 @@ function selectList(){
     animation(fond)
   }
   else {
-    tableau = cloud
     if (moveIsPossiblle == 0) {
+      tableau = cloud
       decorations.style.background = "url(../images/cloud.png)"
       decorations.style.backgroundSize = "contain"
     }
@@ -269,6 +269,7 @@ startGame.addEventListener(
   'click',
   function(e){
     e.preventDefault()
+    selectList()
     scrollbackground()
     startGame.style.visibility="hidden"
 
