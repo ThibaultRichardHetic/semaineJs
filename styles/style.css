@@ -19,7 +19,7 @@ div.info span:last-of-type{
 }
 body{
   background: #2c3e50;
-  width: 960px;
+  width: unset;
   margin:0 auto;
   margin-top: 70px;
 }
@@ -32,22 +32,15 @@ img{
       width: 40%;
 }
 .game{
-  visibility: hidden;
-  display: none;
+  visibility: visible;
+  display: block;
   width: 1280px;
   height: 580px;
   overflow: hidden;
   width: 100%;
 }
 
-.menu{
-  width: 960px;
-  height: 700px;
-  background-color: #bdc3c7;
-  position: relative;
-  box-shadow: -1px 0px 149px -9px rgba(11,94,219,1);
-  border-radius: 10px;
-}
+
 
 ul {
   text-align: center;
@@ -152,7 +145,7 @@ div.game div.startGame p, div.game div.endGame p{
 }
 .player-anim-1 {
 animation-name: fadeOutRightBig;
-animation-duration: 2s;
+animation-duration: 4s;
 animation-fill-mode: both;
 }
 

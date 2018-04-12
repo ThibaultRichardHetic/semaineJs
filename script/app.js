@@ -22,6 +22,7 @@ let combo = 1
 let playerAnim=document.querySelector('.player-anim-1')
 let endGame=document.getElementById('endGame')
 let musicBack = new Audio("../images/musicfond.wav");
+let restart = document.getElementById('restart')
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -254,22 +255,11 @@ input.addEventListener(
   }
 )
 
-
+player.style.animationPlayState="paused"
 form.addEventListener(
   'submit',
   function(e){
     e.preventDefault()
-  }
-)
-play.addEventListener(
-  'click',
-  function(e){
-    menu.style.visibility="hidden"
-    menu.style.display="none"
-    game.style.display="block"
-    game.style.visibility="visible"
-    body.style.width="unset"
-    player.style.animationPlayState="paused"
   }
 )
 
@@ -279,6 +269,7 @@ startGame.addEventListener(
     e.preventDefault()
     scrollbackground()
     startGame.style.visibility="hidden"
+
 
     // launchWord()
     input.focus()
@@ -311,7 +302,12 @@ theWord.addEventListener(
 
   }
 )
-
+restart.addEventListener(
+  'click',
+  function(e){
+    location.reload()
+  }
+)
 function addScore(score){
     let scores = getHighScores();
     scores.push(score);
