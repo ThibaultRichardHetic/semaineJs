@@ -31,7 +31,7 @@ function animation(fond){
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
       decorations.style.background = "url(../images/" + fond + ".png)"
-      decorations.style.height = "100%"
+      decorations.style.backgroundSize = "contain"
       playerAnim.className="player-anim-2"
   },1000)
   setTimeout(() => {
