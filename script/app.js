@@ -92,7 +92,7 @@ function initialiseSpan(){
   letterInWord = 0
 }
 
-function comparLetter(a){
+function comparLetter(a){ //comparaison pour chaque lettre
   if (a == tableau[alea][letterInWord]) {
     console.log('yes')
     letterInWord ++
@@ -123,7 +123,7 @@ function comparLetter(a){
 }
 ////pour la couleur fin
 
-function displayPlayer(){
+function displayPlayer(){ // plus essenciel
   player.style.top= (playerY-100) + 'px'
 }
 
@@ -265,19 +265,15 @@ form.addEventListener(
   }
 )
 
-startGame.addEventListener(
+startGame.addEventListener( // quand on clique une première fois
   'click',
   function(e){
     e.preventDefault()
     selectList()
     scrollbackground()
     startGame.style.visibility="hidden"
-
-
     // launchWord()
     input.focus()
-  
-
     departGame()
     pseudoEffect()
 
@@ -286,7 +282,7 @@ startGame.addEventListener(
 
   )
 
-window.addEventListener(
+window.addEventListener( //Lorsqu'une touche est actionnée
   'keyup', function(e){
     e.preventDefault()
     if (e.keyCode==32) {
@@ -296,10 +292,11 @@ window.addEventListener(
   }
 )
 
-theWord.addEventListener(
+theWord.addEventListener( // quand le joueur perd
   'transitionend', function(e){
     e.preventDefault()
     musicBack.pause()
+    document.querySelector('div.endGame p').innerHTML = "Votre score : " + score
     endGame.style.visibility="visible"
     let gameOver = new Audio("../images/perdu.wav");
     gameOver.play();
