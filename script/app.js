@@ -274,11 +274,6 @@ startGame.addEventListener( // quand on clique une première fois
     startGame.style.visibility="hidden"
     // launchWord()
     input.focus()
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a3dde0f6bee8eb7320cb8b51ef89c6e83a4aca12
     departGame()
     pseudoEffect()
 
