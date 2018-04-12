@@ -23,6 +23,7 @@ let playerAnim=document.querySelector('.player-anim-1')
 let endGame=document.getElementById('endGame')
 let musicBack = new Audio("../images/musicfond.wav");
 let restart = document.getElementById('restart')
+let moveIsPossiblle =0
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -144,7 +145,7 @@ function launchWord(){
   },
   2000)
 }
-let moveIsPossiblle =0
+
 function selectList(){
   if (score >= 100 && score < 200 && moveIsPossiblle == 0) {
     tableau = desert
