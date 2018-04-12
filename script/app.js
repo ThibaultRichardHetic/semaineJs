@@ -296,15 +296,13 @@ theWord.addEventListener(
 
   }
 )
-<<<<<<< HEAD
-=======
+
 function addScore(score){
     let scores = getHighScores();
     scores.push(score);
     scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
     localStorage.setItem("highscores", JSON.stringify(scores));
 }
->>>>>>> ac8ab5716e2360e1f7bc4aea4db0bd5de4bdc597
 
 
 ///// ALL EVENT START
