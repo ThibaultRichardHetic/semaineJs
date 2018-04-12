@@ -31,6 +31,7 @@ function animation(fond){
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
       decorations.style.background = "url(../images/" + fond + ".png)"
+      decorations.style.height = "100%"
       playerAnim.className="player-anim-2"
   },1000)
   setTimeout(() => {
@@ -101,7 +102,7 @@ function comparLetter(a){
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
   }
-  else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace')) {
+  else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace') && (a != 'Tab')) {
     console.log('no')
     console.log(a)
     letterInWord ++
