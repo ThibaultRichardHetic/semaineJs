@@ -16,7 +16,8 @@ let playerY=0
 let wordTest, a
 let letterInWord = 0
 let speed=1
-
+let backgroundGame=document.querySelector('.mover-1')
+let startGame = document.getElementById('startGame')
 
 function backgroundmove(){
   speed-=2
@@ -36,7 +37,7 @@ function aleaWord(array){
  }
 }
 aleaWord(tableau)
-launchWord()
+
 
 ////// pour la couleur début
 function createSpan(letter){
@@ -117,14 +118,15 @@ input.addEventListener(
 )
 function displayPlayer(){
   player.style.top= (playerY-100) + 'px'
-  player.style.left= (playerX-100) + 'px'
+
 }
-game.addEventListener(
+
+backgroundGame.addEventListener(
   'mousemove',
   function(e) {
     //console.log(e)
     playerY = e.clientY
-    playerX = e.clientX
+
     displayPlayer()
     //console.log(playerY)
   }
@@ -139,13 +141,21 @@ form.addEventListener(
 play.addEventListener(
   'click',
   function(e){
-    scrollbackground()
     menu.style.visibility="hidden"
     menu.style.display="none"
     game.style.display="block"
     game.style.visibility="visible"
     body.style.width="unset"
-
+  }
+)
+startGame.addEventListener(
+  'click',
+  function(e){
+    scrollbackground()
+    startGame.style.zIndex="0"
+    startGame.style.visibility="hidden"
+    launchWord()
+    input.autofocus= "true"
   }
 )
 
