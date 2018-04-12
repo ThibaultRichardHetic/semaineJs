@@ -36,12 +36,15 @@ function animation(){
       playerAnim.style.animationPlayState="paused"
   },4000)
 }
-setInterval(aleaWord(tableau),testconsole(), 1000);
+//setInterval(aleaWord(tableau),testconsole(), 1000);
 
 function testconsole(){
   console.log("en boucle")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71b8cf448fae9114d251558ebff08c7247a47c09
 }
 
 function pseudoEffect(){
@@ -275,7 +278,10 @@ startGame.addEventListener(
     departGame()
     pseudoEffect()
     input.autofocus= "true"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71b8cf448fae9114d251558ebff08c7247a47c09
   }
   )
 
