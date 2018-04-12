@@ -151,8 +151,6 @@ startGame.addEventListener(
   }
 )
 
-=======
->>>>>>> 4f07978cdd4999c47389f04de2e25d6b0ffc8cd1
 
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
