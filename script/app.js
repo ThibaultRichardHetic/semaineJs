@@ -204,7 +204,7 @@ function selectList(){
   else {
     if (moveIsPossiblle == 0) {
       tableau = cloud
-      decorations.style.background = "url(../images/cloud.png)"
+      decorations.style.background = "url('../images/cloud.png')"
       decorations.style.backgroundSize = "contain"
     }
   }
