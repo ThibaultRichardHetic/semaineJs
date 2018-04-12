@@ -52,7 +52,7 @@ function pseudoEffect(){
 
 
 function backgroundmove(){
-  speed-=2
+  speed-=1
   decorations.style.backgroundPosition = speed +"px"
 }
 
@@ -81,10 +81,10 @@ function createSpan(letter){
 }
 
 function initialiseSpan(){
-  for (var i = 0; i < wordTest.length; i++) {
-    var d = theWord;
-    var d_nested = document.querySelector("#word span");
-    var throwawayNode = d.removeChild(d_nested);
+  for (let i = 0; i < wordTest.length; i++) {
+    let d = theWord;
+    let creation = document.querySelector("#word span");
+    let throwawayNode = d.removeChild(creation);
   }
   letterInWord = 0
 }
@@ -214,12 +214,14 @@ input.addEventListener(
   'keyup',
   function(e){
   a = e.key
-  comparLetter(a)
+  comparLetter(a)// quand le mot est bon
     if(this.value.replace(' ','') == tableau[alea]) {
       console.log('ok')
       form.reset()
       comboIsPossible ++
-      vitesseMot -= 1                    // quand le mot est bon
+      if (vitesseMot > 3) {
+        vitesseMot -= 1
+      }
       score = score + 50 * combo
       a = -1
       console.log(score)
@@ -280,7 +282,7 @@ theWord.addEventListener(
   }
 )
 function addScore(score){
-    var scores = getHighScores();
+    let scores = getHighScores();
     scores.push(score);
     scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
     localStorage.setItem("highscores", JSON.stringify(scores));
