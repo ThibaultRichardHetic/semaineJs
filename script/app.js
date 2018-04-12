@@ -133,6 +133,7 @@ function randomPosition(){
   theWord.style.transition = "left 0s ease-out"
   theWord.style.top = height + "%"
   theWord.style.left = 80 + "%"
+
 }
 
 function launchWord(){
@@ -275,7 +276,7 @@ startGame.addEventListener(
 
     // launchWord()
     input.focus()
-  
+
 
     departGame()
     pseudoEffect()
