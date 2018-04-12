@@ -92,7 +92,7 @@ function initialiseSpan(){
   letterInWord = 0
 }
 
-function comparLetter(a){
+function comparLetter(a){ //comparaison pour chaque lettre
   if (a == tableau[alea][letterInWord]) {
     console.log('yes')
     letterInWord ++
@@ -123,7 +123,7 @@ function comparLetter(a){
 }
 ////pour la couleur fin
 
-function displayPlayer(){
+function displayPlayer(){ // plus essenciel
   player.style.top= (playerY-100) + 'px'
 }
 
@@ -201,8 +201,8 @@ function selectList(){
     animation(fond)
   }
   else {
-    tableau = cloud
     if (moveIsPossiblle == 0) {
+      tableau = cloud
       decorations.style.background = "url(../images/cloud.png)"
       decorations.style.backgroundSize = "contain"
     }
@@ -218,11 +218,11 @@ function addCombo(){
     if (combo <= 4) {
       combo += 0.5
     }
-    document.getElementById("combo").innerHTML = "combo : " + combo
+    document.getElementById("combo").innerHTML = "combo X  " + combo
   }
   else {
     combo = 1
-    document.getElementById("combo").innerHTML = "combo : " + combo
+    document.getElementById("combo").innerHTML = " "
 
   }
 }
@@ -252,7 +252,6 @@ input.addEventListener(
       selectList()  //
       aleaWord(tableau)
       replaceScore()
-
     }
   }
 )
@@ -266,27 +265,28 @@ form.addEventListener(
   }
 )
 
-startGame.addEventListener(
+startGame.addEventListener( // quand on clique une première fois
   'click',
   function(e){
     e.preventDefault()
+    selectList()
     scrollbackground()
     startGame.style.visibility="hidden"
-
-
     // launchWord()
     input.focus()
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a3dde0f6bee8eb7320cb8b51ef89c6e83a4aca12
     departGame()
     pseudoEffect()
 
     musicBack.play();
   }
-
   )
 
-window.addEventListener(
+window.addEventListener( //Lorsqu'une touche est actionnée
   'keyup', function(e){
     e.preventDefault()
     if (e.keyCode==32) {
@@ -296,10 +296,11 @@ window.addEventListener(
   }
 )
 
-theWord.addEventListener(
+theWord.addEventListener( // quand le joueur perd
   'transitionend', function(e){
     e.preventDefault()
     musicBack.pause()
+    document.querySelector('div.endGame p').innerHTML = "Votre score : " + score
     endGame.style.visibility="visible"
     let gameOver = new Audio("../images/perdu.wav");
     gameOver.play();
