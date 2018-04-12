@@ -150,10 +150,7 @@ startGame.addEventListener(
   }
 )
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 489daf9109fe16690de65f296339a81f3ac2913e
 
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
@@ -273,7 +270,7 @@ form.addEventListener(
 play.addEventListener(
   'click',
   function(e){
-    scrollbackground()
+
     menu.style.visibility="hidden"
     menu.style.display="none"
     game.style.display="block"
