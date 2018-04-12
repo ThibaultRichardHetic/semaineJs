@@ -23,8 +23,8 @@ let playerAnim=document.querySelector('.player-anim-1')
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
+}
 
-<<<<<<< HEAD
 function animation(){
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
@@ -40,8 +40,8 @@ setInterval(aleaWord(tableau),testconsole(), 1000);
 
 function testconsole(){
   console.log("en boucle")
-=======
->>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
+
+
 }
 
 function pseudoEffect(){
@@ -268,14 +268,14 @@ startGame.addEventListener(
     scrollbackground()
     startGame.style.zIndex="0"
     startGame.style.visibility="hidden"
-<<<<<<< HEAD
+
     // launchWord()
     input.autofocus
-=======
+
     departGame()
     pseudoEffect()
     input.autofocus= "true"
->>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
+
   }
   )
 
@@ -294,8 +294,10 @@ theWord.addEventListener(
     e.preventDefault()
     let oldScore = score
     score = 0
-    window.alert("vous avez perdu, votre score est de : " + oldScore)
+    window.alert('vous avez perdu, votre score est de : ' + oldScore)
   }
 )
+
+
 
 ///// ALL EVENT START

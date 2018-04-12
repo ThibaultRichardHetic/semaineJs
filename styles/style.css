@@ -4,7 +4,6 @@
   position: absolute;
   left: 80%;
   margin-top: 10%;
-  background: url("../images/missile-2.png");
   /*transition: left 0s ease-out;*/
 }
 div.info span{
@@ -102,7 +101,7 @@ li:hover{
   opacity: 0.7;
   justify-content: center;
 }
-<<<<<<< HEAD
+
 .player-anim-1 {
 animation-name: fadeOutRightBig;
 animation-duration: 2s;
@@ -136,7 +135,6 @@ opacity: 1;
 -webkit-transform: none;
 transform: none;
 }
-=======
 
 div.game div.startGame h3{
   text-align: center;
@@ -159,5 +157,5 @@ div.game div.startGame p{
 #combo{
   top: -20px;
   left: 80%;
->>>>>>> 1587eb5f827cf713c32512fc309fff335a598f54
+
 }
