@@ -200,8 +200,10 @@ function selectList(){
   }
   else {
     tableau = cloud
-    decorations.style.background = "url(../images/cloud.png)"
-    decorations.style.backgroundSize = "contain"
+    if (moveIsPossiblle == 0) {
+      decorations.style.background = "url(../images/cloud.png)"
+      decorations.style.backgroundSize = "contain"
+    }
   }
 }
 
@@ -211,7 +213,9 @@ function replaceScore(){
 
 function addCombo(){
   if (comboIsPossible > 2) {
-    combo += 0.5
+    if (combo <= 4) {
+      combo += 0.5
+    }  
     document.getElementById("combo").innerHTML = "combo : " + combo
   }
   else {
