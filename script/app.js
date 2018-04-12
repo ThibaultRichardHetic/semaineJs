@@ -26,10 +26,10 @@ function departGame(){
   setInterval(aleaWord(tableau), 1000);
 }
 
-function animation(){
+function animation(fond){
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
-      decorations.style.background = " url(../images/plain.png)"
+      decorations.style.background = "url(../images/" + fond + ".png)"
       playerAnim.className="player-anim-2"
   },1000)
   setTimeout(() => {
@@ -141,47 +141,48 @@ function launchWord(){
 function selectList(){
   if (score >= 100 && score < 200) {
     tableau = plain
-    animation()
+    let fond = "plain"
+    animation(fond)
   }
   else if (score >= 200 && score < 300) {
     tableau = beach
-    decorations.style.background = " url(../images/beach.png)"
-    animation()
+    let fond = "beach"
+    animation(fond)
   }
   else if (score >= 300 && score < 400) {
     tableau = desert
-    decorations.style.background = " url(../images/desert.png)"
-    animation()
+    let fond = "desert"
+    animation(fond)
   }
   else if (score >= 400 && score < 500) {
     tableau = jungle
-    decorations.style.background = " url(../images/jungle.png)"
-    animation()
+    let fond = "jungle"
+    animation(fond)
   }
   else if (score >= 500 && score < 600) {
     tableau = montain
-    decorations.style.background = " url(../images/montain.png)"
-    animation()
+    let fond = "montain"
+    animation(fond)
   }
   else if (score >= 600 && score < 700) {
     tableau = underWater
-    decorations.style.background = " url(../images/underWater.png)"
-    animation()
+    let fond = "underWater"
+    animation(fond)
   }
   else if (score >= 700 && score < 800) {
     tableau = ice
-    decorations.style.background = " url(../images/ice.png)"
-    animation()
+    let fond = "ice"
+    animation(fond)
   }
   else if (score >= 800 && score < 900) {
     tableau = volcan
-    decorations.style.background = " url(../images/volcan.png)"
-    animation()
+    let fond = "volcan"
+    animation(fond)
   }
   else if (score > 900) {
     tableau = space
-    decorations.style.background = " url(../images/space.png)"
-    animation()
+    let fond = "space"
+    animation(fond)
   }
   else {
     tableau = cloud
