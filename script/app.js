@@ -10,7 +10,7 @@ let player = document.getElementById('player')
 let decorations = document.querySelector('.mover-1')
 let wordExistant = []
 let vitesseMot = 15
-let tableau = cloud
+let tableau = desert
 let score = 0
 let playerX = 0
 let playerY = 0
@@ -148,9 +148,9 @@ function launchWord(){
 
 function selectList(){
   if (score >= 100 && score < 200 && moveIsPossiblle == 0) {
-    tableau = desert
+    tableau = montain
     moveIsPossiblle=1
-    let fond = "desert"
+    let fond = "montain"
     animation(fond)
   }
   else if (score >= 200 && score < 300 && moveIsPossiblle == 1) {
@@ -172,9 +172,9 @@ function selectList(){
     animation(fond)
   }
   else if (score >= 500 && score < 600 && moveIsPossiblle == 4) {
-    tableau = montain
+    tableau = plain
     moveIsPossiblle=5
-    let fond = "montain"
+    let fond = "plain"
     animation(fond)
   }
   else if (score >= 600 && score < 700 && moveIsPossiblle == 5) {
@@ -184,9 +184,9 @@ function selectList(){
     animation(fond)
   }
   else if (score >= 700 && score < 800 && moveIsPossiblle == 6) {
-    tableau = plain
+    tableau = cloud
     moveIsPossiblle=7
-    let fond = "plain"
+    let fond = "cloudy"
     animation(fond)
   }
   else if (score >= 800 && score < 900 && moveIsPossiblle == 7) {
@@ -203,8 +203,8 @@ function selectList(){
   }
   else {
     if (moveIsPossiblle == 0) {
-      tableau = cloud
-      decorations.style.background = "url('../images/cloudy.png')"
+      tableau = desert
+      decorations.style.background = "url('../images/desert.png')"
       decorations.style.backgroundSize = "contain"
     }
   }
