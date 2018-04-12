@@ -263,17 +263,19 @@ play.addEventListener(
 startGame.addEventListener(
   'click',
   function(e){
+    e.preventDefault()
     scrollbackground()
     startGame.style.visibility="hidden"
 
     // launchWord()
-    input.autofocus
+    input.focus()
 
     departGame()
     pseudoEffect()
     input.autofocus= "true"
     musicBack.play();
   }
+
   )
 
 window.addEventListener(
