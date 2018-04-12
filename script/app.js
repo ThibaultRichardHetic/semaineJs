@@ -16,12 +16,12 @@ let playerX = 0
 let playerY = 0
 let wordTest, a , alea
 let letterInWord = 0
-<<<<<<< HEAD
+
 let speed=1
 let backgroundGame=document.querySelector('.mover-1')
 let startGame = document.getElementById('startGame')
-=======
-let speed = 1
+
+let speedWord = 1
 let comboIsPossible = 0
 let combo = 1
 
@@ -33,7 +33,7 @@ function testconsole(){
 
 
 ///// ALL FUNCTIONS START
->>>>>>> 4f07978cdd4999c47389f04de2e25d6b0ffc8cd1
+
 
 function backgroundmove(){
   speed-=2
@@ -56,11 +56,10 @@ function aleaWord(array){
    createSpan(letter)
  }
 }
-<<<<<<< HEAD
+
 aleaWord(tableau)
 
-=======
->>>>>>> 4f07978cdd4999c47389f04de2e25d6b0ffc8cd1
+
 
 ////// pour la couleur début
 function createSpan(letter){
@@ -111,7 +110,7 @@ function displayPlayer(){
   player.style.top= (playerY-100) + 'px'
 
 }
-<<<<<<< HEAD
+
 
 backgroundGame.addEventListener(
   'mousemove',
@@ -151,6 +150,10 @@ startGame.addEventListener(
   }
 )
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 489daf9109fe16690de65f296339a81f3ac2913e
 
 function randomPosition(){
   let x = Math.round(Math.random() * 15) // positionne le mot aléatoirement sur un  axe verticale
