@@ -1,10 +1,15 @@
+*{
+  font-family: 'Oxygen', sans-serif;
+}
+h1, h2, h3, a{
+  font-family: 'Roboto Condensed', sans-serif;
+}
 #word{
   z-index: 100;
   color: white;
   position: absolute;
   left: 80%;
   margin-top: 10%;
-  /*transition: left 0s ease-out;*/
 }
 div.info span{
   color: white;
@@ -131,13 +136,9 @@ div.game div.startGame p, div.game div.endGame p{
   text-decoration: none;
 }
 
-
-
-/*
-.moversyze{
-  background-size: 550px 435px;
+#case{
+  font-size: 20px;
 }
-*/
 
 #pseudo{
   top: 20px;
