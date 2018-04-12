@@ -102,6 +102,10 @@ li:hover{
   justify-content: center;
 }
 
+.player-anim-1{
+  margin-top: 110px;
+}
+
 div.game div.startGame h3{
   text-align: center;
   margin-top: 150px;
