@@ -108,8 +108,10 @@ li:hover{
 }
 
 div.game div#word span{
-  font-size: 30px;
+  font-size: 35px;
   visibility: visible;
+  font-family: 'Handlee', cursive;
+
 }
 
 div.game div.startGame h3, div.game div.endGame h3{
