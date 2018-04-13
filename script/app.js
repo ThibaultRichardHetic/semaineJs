@@ -46,9 +46,6 @@ function animation(fond){  // mouvement du joueur et du fond
 }
 
 
-function pseudoEffect(){ //recuperation du pseudo
-  console.log(document.getElementById('yourPseudo'))
-}
 
 function backgroundmove(){ // mouvement du fond
   speed-=1
@@ -91,19 +88,16 @@ function initialiseSpan(){
 
 function comparLetter(a){ //comparaison pour chaque lettre
   if (a == tableau[alea][letterInWord]) {
-    console.log('yes')
     letterInWord ++
     document.querySelector('span:nth-child(' + letterInWord +')').style.color = "green"
   }
   else if (a == 'Backspace' && letterInWord > 0) {
-    console.log('efface')
     letterInWord -= 1
     comboIsPossible = 0
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord+1) +')').style.color = "white"
   }
   else if ((a != tableau[alea][letterInWord]) && (a != -1) && (a != 'Backspace') && (a != 'Tab')) {
-    console.log('no')
     let erreur = new Audio("../images/erreur.wav");
     erreur.play();
     letterInWord ++
@@ -204,7 +198,7 @@ function selectList(){
   }
 }
 
-function replaceScore(){ // affichage du score 
+function replaceScore(){ // affichage du score
   document.getElementById("score").innerHTML = "score : " + score
 }
 
@@ -240,15 +234,13 @@ input.addEventListener(
     if(this.value.replace(' ','') == tableau[alea]) {
       let audio = new Audio("../images/validation.wav");
       audio.play();
-      console.log('ok')
       form.reset()
       comboIsPossible ++
       if (vitesseMot > 3) { // le mot va plus vite si il a + de 3s
         vitesseMot -= 1
       }
-      score = score + 10 * combo
+      score = score + 20 * combo
       a = -1
-      console.log(score)
       addCombo()
       initialiseSpan()
       selectList()
