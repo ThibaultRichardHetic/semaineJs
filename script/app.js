@@ -238,7 +238,7 @@ input.addEventListener(
   a = e.key
   comparLetter(a)  // quand le mot est bon
     if(this.value.replace(' ','') == tableau[alea]) {
-      let audio = new Audio("../images/valide.wav");
+      let audio = new Audio("../images/validation.wav");
       audio.play();
       console.log('ok')
       form.reset()
