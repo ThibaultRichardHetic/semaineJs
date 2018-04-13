@@ -31,7 +31,7 @@ function departGame(){
   setInterval(aleaWord(tableau), 1000);
 }
 
-function animation(fond){
+function animation(fond){  // mouvement du joueur et du fond
   playerAnim.style.animationPlayState="running"
   setTimeout(() => {
       decorations.style.background = "url(../images/" + fond + ".png)"
@@ -46,11 +46,11 @@ function animation(fond){
 }
 
 
-function pseudoEffect(){
+function pseudoEffect(){ //recuperation du pseudo
   console.log(document.getElementById('yourPseudo'))
 }
 
-function backgroundmove(){
+function backgroundmove(){ // mouvement du fond
   speed-=1
   decorations.style.backgroundPosition = speed +"px"
 }
@@ -59,7 +59,7 @@ function scrollbackground(){
   setInterval(backgroundmove,10)
 }
 
-function aleaWord(array){
+function aleaWord(array){ //generation de mot aleatoire
 
  alea = parseInt(Math.floor(Math.random() * array.length))
 
@@ -258,7 +258,7 @@ input.addEventListener(
   }
 )
 
-player.style.animationPlayState="paused"
+player.style.animationPlayState="paused" // le joueur ne bouge plus 
 
 form.addEventListener(
   'submit',
@@ -305,7 +305,7 @@ theWord.addEventListener( // quand le joueur perd
 
   }
 )
-restart.addEventListener(
+restart.addEventListener( // lors du clique
   'click',
   function(e){
     location.reload()
