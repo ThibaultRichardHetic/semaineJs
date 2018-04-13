@@ -8,6 +8,10 @@ let theWord = document.getElementById('word')
 let body = document.querySelector('body')
 let player = document.getElementById('player')
 let decorations = document.querySelector('.mover-1')
+let playerAnim=document.querySelector('.player-anim-1')
+let endGame=document.getElementById('endGame')
+let restart = document.getElementById('restart')
+let musicBack = new Audio("../images/musicfond.wav")
 let wordExistant = []
 let vitesseMot = 15
 let tableau = desert
@@ -19,11 +23,8 @@ let letterInWord = 0
 let speed = 1
 let comboIsPossible = 0
 let combo = 1
-let playerAnim=document.querySelector('.player-anim-1')
-let endGame=document.getElementById('endGame')
-let musicBack = new Audio("../images/musicfond.wav");
-let restart = document.getElementById('restart')
-let moveIsPossiblle =0
+
+let moveIsPossiblle = 0
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -42,13 +43,10 @@ function animation(fond){
       playerAnim.style.animationPlayState="paused"
   },4000)
 }
-//setInterval(aleaWord(tableau),testconsole(), 1000);
 
 
 function pseudoEffect(){
-  //pseudo = document.getElementById('yourPseudo').value
   console.log(document.getElementById('yourPseudo'))
-  //console.log(pseudo)
 }
 
 ///// ALL FUNCTIONS START
@@ -110,10 +108,8 @@ function comparLetter(a){ //comparaison pour chaque lettre
     console.log('no')
     let erreur = new Audio("../images/erreur.wav");
     erreur.play();
-    console.log(a)
     letterInWord ++
     comboIsPossible = 0
-    console.log('comboIsPossible : ' + comboIsPossible)
     addCombo()
     document.querySelector('span:nth-child(' + (letterInWord) +')').style.color = "red"
 
@@ -235,22 +231,22 @@ input.addEventListener(
   'keyup',
   function(e){
   a = e.key
-  comparLetter(a)// quand le mot est bon
+  comparLetter(a)  // quand le mot est bon
     if(this.value.replace(' ','') == tableau[alea]) {
       let audio = new Audio("../images/valide.wav");
       audio.play();
       console.log('ok')
       form.reset()
       comboIsPossible ++
-      if (vitesseMot > 3) {
+      if (vitesseMot > 3) { // le mot va plus vite si il a + de 3s
         vitesseMot -= 1
       }
-      score = score + 50 * combo
+      score = score + 10 * combo
       a = -1
       console.log(score)
       addCombo()
       initialiseSpan()
-      selectList()  //
+      selectList()
       aleaWord(tableau)
       replaceScore()
     }
@@ -273,7 +269,6 @@ startGame.addEventListener( // quand on clique une première fois
     selectList()
     scrollbackground()
     startGame.style.visibility="hidden"
-    // launchWord()
     input.focus()
     departGame()
     pseudoEffect()
