@@ -13,9 +13,9 @@ h1, h2, h3, a{
   position: absolute;
   left: 80%;
   margin-top: 10%;
-  background:url("../images/missile-2.png");
+  /*background:url("../images/missile-2.png");
   background-size: contain;
-  background-position: -5px -10px;
+  background-position: -5px -10px;*/
 }
 div.info span{
   color: white;
