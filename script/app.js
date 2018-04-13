@@ -23,8 +23,9 @@ let letterInWord = 0
 let speed = 1
 let comboIsPossible = 0
 let combo = 1
-
 let moveIsPossiblle = 0
+
+///// ALL FUNCTIONS START
 
 function departGame(){
   setInterval(aleaWord(tableau), 1000);
@@ -48,9 +49,6 @@ function animation(fond){
 function pseudoEffect(){
   console.log(document.getElementById('yourPseudo'))
 }
-
-///// ALL FUNCTIONS START
-
 
 function backgroundmove(){
   speed-=1
@@ -224,6 +222,13 @@ function addCombo(){
   }
 }
 
+function addScore(score){
+    let scores = getHighScores();
+    scores.push(score);
+    scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
+    localStorage.setItem("highscores", JSON.stringify(scores));
+}
+
 ///// ALL FUNCTIONS END
 
 ///// ALL EVENT START
@@ -306,12 +311,5 @@ restart.addEventListener(
     location.reload()
   }
 )
-function addScore(score){
-    let scores = getHighScores();
-    scores.push(score);
-    scores = scores.sort(function(a,b){ return b-a }).slice(0,3);
-    localStorage.setItem("highscores", JSON.stringify(scores));
-}
-
 
 ///// ALL EVENT START
