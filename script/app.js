@@ -204,11 +204,11 @@ function selectList(){
   }
 }
 
-function replaceScore(){
+function replaceScore(){ // affichage du score 
   document.getElementById("score").innerHTML = "score : " + score
 }
 
-function addCombo(){
+function addCombo(){ // incrémentation du combo et affichage
   if (comboIsPossible > 2) {
     if (combo <= 4) {
       combo += 0.5
@@ -258,7 +258,7 @@ input.addEventListener(
   }
 )
 
-player.style.animationPlayState="paused" // le joueur ne bouge plus 
+player.style.animationPlayState="paused" // le joueur ne bouge plus
 
 form.addEventListener(
   'submit',
